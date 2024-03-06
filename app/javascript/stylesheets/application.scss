@@ -1,0 +1,19 @@
+@use '~bootstrap/scss/bootstrap';
+
+footer {
+  margin-top: auto;
+  height: auto;
+  width: 100%;
+}
+
+.footer_adjustments {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (min-width: 992px) {
+.container.bg-warning {
+  max-width: 100%;
+ }
+}
