@@ -23,20 +23,30 @@
         <% end %>
       </li>
       <li class="nav-item">
-        Log out
+        <%= link_to destroy_user_session_path, class: 'nav-link text-dark' do %>
+          Log out
+        <% end %>
       </li>
     <% elsif user_signed_in? %>
       <li class="nav-item">
-        Home
+        <%= link_to root_path, class: 'nav-link text-dark' %>
+          Home
+        <% end %>  
       </li>
       <li class="nav-item">
-        Users
+        <%= link_to user_path, class: 'nav-link text-dark' do %>
+          Users
+        <% end %>
       </li>
       <li class="nav-item">
-        Records
+        <%= link_to health_records_path, class: 'nav-link text-dark' do %>
+          Records
+        <% end %>  
       </li>
       <li class="nav-item">
-        Log out
+        <%= link_to destroy_user_session  %>
+          Log out
+        <% end %>  
       </li>
     <% else %>
       <li class="nav-item">
