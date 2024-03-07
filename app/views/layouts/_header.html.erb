@@ -3,7 +3,7 @@
   <% if admin_signed_in? %>
     <p></p>
   <% elsif user_signed_in? %>
-    <p class="text-light mt-3 ml-auto">ようこそ、名前さん！</p>
+    <p class="text-light mt-3 ml-auto">ようこそ、<%= current_user.name %>さん！</p>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -29,9 +29,9 @@
       </li>
     <% elsif user_signed_in? %>
       <li class="nav-item">
-        <%= link_to root_path, class: 'nav-link text-dark' %>
+        <%= link_to user_path(current_user), class: 'nav-link text-dark' do %>
           Home
-        <% end %>  
+        <% end %>
       </li>
       <li class="nav-item">
         <%= link_to user_path, class: 'nav-link text-dark' do %>
@@ -41,25 +41,33 @@
       <li class="nav-item">
         <%= link_to health_records_path, class: 'nav-link text-dark' do %>
           Records
-        <% end %>  
+        <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to destroy_user_session  %>
+        <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-dark' do  %>
           Log out
-        <% end %>  
+        <% end %>
       </li>
     <% else %>
       <li class="nav-item">
-        Home
+        <%= link_to root_path, class: 'nav-link text-dark' do %>
+          Home
+        <% end %>
       </li>
       <li class="nav-item">
-        About
+        <%= link_to about_path, class: 'nav-link text-dark' do %>
+          About
+        <% end %>
       </li>
       <li class="nav-item">
-        Sign up
+        <%= link_to new_user_registration_path, class: 'nav-link text-dark' do %>
+          Sign up
+        <% end %>
       </li>
       <li class="nav-item">
-        Log in
+        <%= link_to new_user_session_path, class: 'nav-link text-dark' do %>
+          Log in
+        <% end %>
       </li>
     <% end %>
     </ul>
