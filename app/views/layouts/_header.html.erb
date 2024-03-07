@@ -1,10 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
   <a class="navbar-brand" href="/">WellnessJourney</a>
-  <% if admin_signed_in? %>
-    <p></p>
-  <% elsif user_signed_in? %>
-    <p class="text-light mt-3 ml-auto">ようこそ、<%= current_user.name %>さん！</p>
-  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -34,7 +29,7 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to user_path, class: 'nav-link text-dark' do %>
+        <%= link_to users_path, class: 'nav-link text-dark' do %>
           Users
         <% end %>
       </li>
@@ -71,6 +66,14 @@
       </li>
     <% end %>
     </ul>
+    <% if admin_signed_in? %>
+      <p>管理者ログイン中</p>
+    <% elsif user_signed_in? %>
+      <p class="text-dark mt-3 ml-auto">
+        ようこそ！！<%= current_user.name %>さん！
+        Let's enjoy your active life！
+      </p>
+    <% end %>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
