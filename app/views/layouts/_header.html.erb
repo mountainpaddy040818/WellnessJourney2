@@ -1,20 +1,57 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-  <a class="navbar-brand" href="#">WellnessJourney</a>
+  <a class="navbar-brand" href="/">WellnessJourney</a>
+  <% if admin_signed_in? %>
+    <p></p>
+  <% elsif user_signed_in? %>
+    <p class="text-light mt-3 ml-auto">ようこそ、名前さん！</p>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <% if admin_signed_in? %>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to admin_health_record_health_record_comments_path, class: 'nav-link text-dark' do %>
+          Comments
+        <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <%= link_to admin_users_path, class: 'nav-link text-dark' do %>
+          Users
+        <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        Log out
       </li>
+    <% elsif user_signed_in? %>
+      <li class="nav-item">
+        Home
+      </li>
+      <li class="nav-item">
+        Users
+      </li>
+      <li class="nav-item">
+        Records
+      </li>
+      <li class="nav-item">
+        Log out
+      </li>
+    <% else %>
+      <li class="nav-item">
+        Home
+      </li>
+      <li class="nav-item">
+        About
+      </li>
+      <li class="nav-item">
+        Sign up
+      </li>
+      <li class="nav-item">
+        Log in
+      </li>
+    <% end %>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
