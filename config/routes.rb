@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     # ユーザーのルーティング
     root "homes#top"
     get "home/about" => "homes#about", as: "about"
+    get '/users/my_page' => 'users#show'
     resources :users, only: [:index, :show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
       get "followings" => "relationships#followings", as: "followings"

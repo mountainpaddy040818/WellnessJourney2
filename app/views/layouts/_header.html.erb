@@ -39,6 +39,11 @@
         <% end %>
       </li>
       <li class="nav-item">
+        <%= link_to users_my_page_path, class: 'nav-link text-dark' do %>
+          <i class="fa-solid fa-file-lines"></i>My page
+        <% end %>
+      </li>
+      <li class="nav-item">
         <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-dark' do  %>
           <i class="fa-solid fa-arrow-right-from-bracket"></i>Log out
         <% end %>
@@ -70,7 +75,7 @@
       <p>Adimin Log in</p>
     <% elsif user_signed_in? %>
       <p class="text-dark mt-3 ml-auto">
-        Wellcome!!   <%= current_user.name %>!
+        Wellcome!!   <%= current_user.name %>さん!
         Let's enjoy your fitness life!
       </p>
     <% end %>
