@@ -43,5 +43,6 @@ Rails.application.routes.draw do
       resources :health_record_comments, only: [:index, :show, :destroy]
     end
   end
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
