@@ -7,11 +7,11 @@ class CreateHealthRecords < ActiveRecord::Migration[6.1]
       # 体の部位
       # t.string :exercise, null: false, default: ""
       # 種目
-      t.text :training_content, null: false
+      # t.text :training_content, null: false
       # トレーニング内容
-      t.text :diet_content, null: false
+      # t.text :diet_content, null: false
       # 食事内容
-      t.text :today_impression, null: false
+      # t.text :today_impression, null: false
       # 本日の感想
       t.timestamps
     end
