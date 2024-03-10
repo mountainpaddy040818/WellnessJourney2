@@ -16,7 +16,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
 
       # t.string :name, null: false, default: ""
       # 名前入力
-      t.text :introduction, null: false
+      # t.text :introduction, null: false
       # 自己紹介文
       t.text :target, null: false
       # 目標設定
