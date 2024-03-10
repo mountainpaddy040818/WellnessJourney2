@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class AddDeviseToUsers < ActiveRecord::Migration[6.1]
-  def self.up
+  def change
     change_table :users do |t|
       ## Database authenticatable
-      # t.string :email,              null: false, default: ""
-      # t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false, default: ""
+      t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
       # t.string   :reset_password_token
@@ -14,11 +14,11 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
       ## Rememberable
       # t.datetime :remember_created_at
 
-      # t.string :name, null: false, default: ""
+      t.string :name, null: false
       # 名前入力
-      # t.text :introduction, null: false
+      t.text :introduction, null: false
       # 自己紹介文
-      # t.text :target, null: false
+      t.text :target, null: false
       # 目標設定
 
       ## Trackable
@@ -48,11 +48,5 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
-  end
-
-  def self.down
-    # By default, we don't want to make any assumption about how to roll back a migration when your
-    # model already existed. Please edit below which fields you would like to remove in this migration.
-    raise ActiveRecord::IrreversibleMigration
   end
 end

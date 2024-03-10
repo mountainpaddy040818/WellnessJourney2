@@ -62,18 +62,18 @@ ActiveRecord::Schema.define(version: 2024_03_07_043001) do
   create_table "health_record_comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "record_id"
-    t.text "comment", default: "", null: false
+    t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "health_records", force: :cascade do |t|
     t.integer "user_id"
-    t.string "part", default: "", null: false
-    t.string "exercise", default: "", null: false
-    t.text "training_content", default: "", null: false
-    t.text "diet_content", default: "", null: false
-    t.text "today_impression", default: "", null: false
+    t.string "part", null: false
+    t.string "exercise", null: false
+    t.text "training_content", null: false
+    t.text "diet_content", null: false
+    t.text "today_impression", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -90,15 +90,12 @@ ActiveRecord::Schema.define(version: 2024_03_07_043001) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.string "name", default: "", null: false
-    t.text "introduction", default: "", null: false
-    t.text "target", default: "", null: false
+    t.string "name", null: false
+    t.text "introduction", null: false
+    t.text "target", null: false
     t.boolean "is_active", default: true
+    t.index "\"reset_password_token\"", name: "index_users_on_reset_password_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
