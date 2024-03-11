@@ -23,7 +23,6 @@ Rails.application.routes.draw do
     # ユーザーのルーティング
     root "homes#top"
     get "home/about" => "homes#about", as: "about"
-    get '/users/my_page' => 'users#show'
     resources :users, only: [:index, :show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
       get "followings" => "relationships#followings", as: "followings"
@@ -44,6 +43,6 @@ Rails.application.routes.draw do
       resources :health_record_comments, only: [:index, :show, :destroy]
     end
   end
-  
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
