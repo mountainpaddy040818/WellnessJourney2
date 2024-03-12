@@ -1,1 +1,39 @@
-<h1>新規ポスト</h1>
+<div class="container mt-5">
+  <div class="col-md-10 mx-auto">
+    <div class="row col-lg-8 justify-content-left">
+      <h2><strong>New Post</strong></h2>
+    </div>
+  </div>
+
+  <div class="form d-flex justify-content-center">
+    <%= form_with model: @health_record, method: :post do |f| %>
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td>鍛えた箇所</td>
+            <td><%= f.text_field :part, class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td>実施した種目</td>
+            <td><%= f.text_field :exercise, class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td>トレーニング内容</td>
+            <td><%= f.text_field :training_content, class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td>食事内容</td>
+            <td><%= f.text_area :diet_content, class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td>本日の感想</td>
+            <td><%= f.text_area :today_impression, class: "form-control" %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <%= f.submit "Post", class: "btn btn-success btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+</div>
