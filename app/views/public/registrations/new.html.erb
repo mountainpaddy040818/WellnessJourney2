@@ -1,34 +1,67 @@
-<h2>Sign up</h2>
-
 <%= form_with model: @user, url: user_registration_path do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="container mt-4 mb-5">
+    <div class="row">
+      <div class="col-lg-3 offset-lg-1 col-md-4 offset-md-4 col-6 offset-3 text-center">
+        <h2>Sign up</h2>
+        <%= render "public/shared/error_messages", resource: resource %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+  <div class="container mt-5">
+    <div class="field form-group">
+      <div class="row">
+        <div class="col-lg-2 offset-lg-2 flex-md-fill mt-2">
+          <%= f.label :email %><br />
+        </div>
+        <div class="col-lg-7 offset-lg-1 flex-md-fill">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field form-group">
+      <div class="row">
+        <div class="col-lg-2 offset-lg-2 flex-md-fill mt-2">
+          <%= f.label :name %><br>
+        </div>
+        <div class="col-lg-7 offset-lg-1 flex-md-fill">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field form-group">
+      <div class="row">
+        <div clas="col-lg-2 offset-lg-2 flex-md-fill mt-2">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+        </div>
+        <div class="col-lg-7 offset-lg-1 flex-md-fill">
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+    <div class="field form-group">
+      <div class="row">
+        <div class="col-lg-2 offset-lg-2 flex-md-fill mt-2">
+          <%= f.label :password_confirmation %><br />
+        </div>
+        <div class="col-lg-7 offset-lg-1 flex-md-fill">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="actions col-lg-7 offset-lg-5 mt-3">
+        <%= f.submit "Sign up", class: "btn btn-success btn-lg" %>
+      </div>
+    </div>
+    
   </div>
+  
 <% end %>
-
-<%= render "public/shared/links" %>
