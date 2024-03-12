@@ -14,15 +14,15 @@ class HealthRecord < ApplicationRecord
     favorites.exists?(user_id: user.id)
   end
   
-  def self.search_for(content, method)
-    if method == 'perfect'
-      HealthRecord.where(title: content)
-    elsif method == 'forward'
-      HealthRecord.where('name LIKE ?', content + '%')
-    elsif method == 'backward'
-      HealthRecord.where('name LIKE ?', '%' + content)
-    else
-      HealthRecord.where('name LIKE ?', '%' + content + '%')
-    end
-  end
+  # def self.search_for(content, method)
+  #   if method == 'perfect'
+  #     HealthRecord.where(title: content)
+  #   elsif method == 'forward'
+  #     HealthRecord.where('name LIKE ?', content + '%')
+  #   elsif method == 'backward'
+  #     HealthRecord.where('name LIKE ?', '%' + content)
+  #   else
+  #     HealthRecord.where('name LIKE ?', '%' + content + '%')
+  #   end
+  # end
 end
