@@ -1,2 +1,37 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <h1>
+        <i class="fa-solid fa-fire-flame-curved fire"></i>Wellcome to <strong>WellnessJourney</strong>!!<i class="fa-solid fa-fire-flame-curved fire"></i>
+      </h1>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col text-center">
+      <p>このサイトは日々の運動を日課にしている方や</p>
+      <p>最近筋トレを始めた方、</p>
+      <p>筋トレを始めてみたもののやり方がいまいちわからない方、</p>
+      <p>経験者の意見を聞きたい方などなど</p>
+      <p>どのような用途でもご利用いただくことが出来ます！</p>
+      <p>Let's enjoy your fitness life!</p>
+      <% if user_signed_in? %>
+        <p></p>
+      <% else %>
+        <p>まずは下の「Guest Log in」から使用感を試してみてください！！</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class= "container mt-3">
+    <div class="row">
+      <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+        <% if user_signed_in? %>
+          <p></p>
+        <% else %>
+          <%= link_to 'Guest Log in', users_guest_sign_in_path, class: "btn btn-dark btn-block btn-lg mb-3 sign_in", method: :post %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
