@@ -16,13 +16,13 @@ class HealthRecord < ApplicationRecord
   
   def self.search_for(content, method)
     if method == 'perfect'
-      Book.where(title: content)
+      HealthRecord.where(title: content)
     elsif method == 'forward'
-      Book.where('name LIKE ?', content + '%')
+      HealthRecord.where('name LIKE ?', content + '%')
     elsif method == 'backward'
-      Book.where('name LIKE ?', '%' + content)
+      HealthRecord.where('name LIKE ?', '%' + content)
     else
-      Book.where('name LIKE ?', '%' + content + '%')
+      HealthRecord.where('name LIKE ?', '%' + content + '%')
     end
   end
 end
