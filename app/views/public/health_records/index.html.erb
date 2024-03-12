@@ -1,1 +1,34 @@
-<h1>レコードリスト</h1>
+<div class="container mt-5">
+  <div class="col-md-12 mx-auto">
+    <div class="row col-lg-8 justify-content-left">
+      <h2><strong>Records List</strong></h2>
+    </div>
+  </div>
+
+  <table class="table table-hover table-inverse mt-4">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Body Parts</th>
+          <th>Exercises</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @health_records.each do |health_record| %>
+          <tr>
+            <td>
+              <%= link_to(health_record.user) do %>
+                <%= image_tag health_record.user.get_profile_image, size:'100x100' %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to health_record.part, health_record %>
+            </td>
+            <td>
+              <%= health_record.exercise %>    
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+</div>
