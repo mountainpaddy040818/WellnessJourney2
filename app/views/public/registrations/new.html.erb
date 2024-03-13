@@ -10,7 +10,7 @@
 
   <div class="container mt-5">
     <div class="field form-group">
-      <div class="row">
+      <div class="row justify-content-end">
         <div class="col-lg-2 offset-lg-2 flex-md-fill mt-2">
           <%= f.label :email %><br />
         </div>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="field form-group">
-      <div class="row">
+      <div class="row justify-content-end">
         <div class="col-lg-2 offset-lg-2 flex-md-fill mt-2">
           <%= f.label :name %><br>
         </div>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="field form-group">
-      <div class="row">
+      <div class="row justify-content-end">
         <div clas="col-lg-2 offset-lg-2 flex-md-fill mt-2">
           <%= f.label :password %>
           <% if @minimum_password_length %>
@@ -46,7 +46,7 @@
     </div>
 
     <div class="field form-group">
-      <div class="row">
+      <div class="row justify-content-end">
         <div class="col-lg-2 offset-lg-2 flex-md-fill mt-2">
           <%= f.label :password_confirmation %><br />
         </div>
@@ -55,13 +55,13 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="actions col-lg-7 offset-lg-5 mt-3">
         <%= f.submit "Sign up", class: "btn btn-success btn-lg" %>
       </div>
     </div>
-    
+
   </div>
-  
+
 <% end %>
