@@ -1,1 +1,39 @@
-<h1>ユーザー詳細</h1>
+<div class="container mt-5">
+  <div class="col-md-12 mx-auto">
+    <div class="row col-lg-8 justify-content-left">
+      <h2><strong>User Details</strong></h2>
+    </div>
+  </div>
+
+  <div class="col-md-12 d-flex justify-content-center mr-5">
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <td><strong></strong></td>
+          <td>
+            <%= image_tag @user.get_profile_image, size: "300x200" %>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>User Name</strong></td>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <td><strong>Introduction</strong></td>
+          <td><%= @user.introduction %></td>
+        </tr>
+        <tr>
+          <td><strong>Target</strong></td>
+          <td><%= @user.target %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-3 text-center">
+    <% if @user == current_user %>
+      <%= link_to "Edit", edit_user_path(@user.id), class: "btn btn-success btn-sm mr-3" %>
+    <% end %>
+    <%= link_to "Back", users_path, class: "btn btn-secondary btn-sm mr-3" %>
+  </div>
+</div>

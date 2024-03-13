@@ -54,14 +54,14 @@ ActiveRecord::Schema.define(version: 2024_03_07_043001) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "record_id"
+    t.integer "health_record_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "health_record_comments", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "record_id"
+    t.integer "health_record_id"
     t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

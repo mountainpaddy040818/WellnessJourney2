@@ -1,1 +1,38 @@
-<h1>ユーザー一覧</h1>
+<div class="container mt-5">
+  <div class="col-md-12 mx-auto">
+    <div class="row col-lg-8 justify-content-left">
+      <h2><strong>Users List</strong></h2>
+    </div>
+  </div>
+
+  <table class="table table-striped mt-4">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>User Name</th>
+        <th>Introduction</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to(user) do %>
+              <%= image_tag user.get_profile_image, size: "30x30" %>
+            <% end %>
+          </td>
+          <td>
+            <%= user.name %>
+          </td>
+          <td>
+            <%= user.introduction %>
+          </td>
+          <td>
+            <%= link_to "Detail", user_path(user.id), class: "btn btn-info btn-sm" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
