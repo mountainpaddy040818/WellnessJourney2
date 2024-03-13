@@ -33,11 +33,11 @@
           <i class="fa-solid fa-file-pen"></i>Records
         <% end %>
       </li>
-      <li class="nav-item">
-        <%= link_to users_path, class: 'nav-link text-dark' do %>
-          <i class="fa-solid fa-file-lines"></i>My page
-        <% end %>
-      </li>
+      <!--<li class="nav-item">-->
+      <!--  <%#= link_to user_path(@user.id), class: 'nav-link text-dark' do %>-->
+      <!--    <i class="fa-solid fa-file-lines"></i>My page-->
+      <!--  <#% end %>-->
+      <!--</li>-->
       <li class="nav-item">
         <%= link_to  new_health_record_path, class: 'nav-link text-dark' do %>
           <i class="fa-solid fa-plus"></i>New post
@@ -67,15 +67,18 @@
     <% end %>
     </ul>
     <% if admin_signed_in? %>
-      <p>Adimin Log in</p>
+      <p>Admin Logging in now!</p>
     <% elsif user_signed_in? %>
       <p class="text-dark mt-3 ml-auto">
         ようこそ！<%= current_user.name %>さん!
       </p>
     <% end %>
-    <form class="form-inline my-2 my-lg-0 ml-5">
-      <input class="form-control mr-sm-2" type="search" placeholder="search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
+
+    <%= form_tag("/", method: "get", class: "form-inline my-2 my-lg-0 ml-5") do %>
+      <%= text_field_tag(:search, nil, class: "form-control mr-sm-2", placeholder: "search") %>
+      <%= button_tag(type: "submit", class: "btn btn-outline-success my-2 my-sm-0") do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
+    <% end %>
   </div>
 </nav>

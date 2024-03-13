@@ -4,4 +4,42 @@
       <h2><strong>Record Details</strong></h2>
     </div>
   </div>
-</div>  
+
+  <div class="col-md-12 d-flex justify-content-center mr-5">
+    <table class="table table-borderless">
+      <thead>
+        <tr></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Body Parts</strong></td>
+          <td><%= @health_record.part %></td>
+        </tr>
+        <tr>
+          <td><strong>Exercises</strong></td>
+          <td><%= @health_record.exercise %></td>
+        </tr>
+        <tr>
+          <td><strong>Training Contents</strong></td>
+          <td><%= @health_record.training_content %></td>
+        </tr>
+        <tr>
+          <td><strong>Diet Contents</strong></td>
+          <td><%= @health_record.diet_content %></td>
+        </tr>
+        <tr>
+          <td><strong>Today's impressions</strong></td>
+          <td><%= @health_record.today_impression %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-3 text-center">
+    <%= link_to "Edit", edit_health_record_path(@health_record.id), class: "btn btn-success btn-sm mr-3" %>
+    <%= link_to "Back", health_records_path, class: "btn btn-secondary btn-sm mr-3" %>
+    <%= link_to "Destroy", @health_record, method: :delete, 
+      data: { confirm: 'Are you sure really?' }, 
+      class: "btn btn-danger btn-sm mr-3" %>
+  </div>
+</div>

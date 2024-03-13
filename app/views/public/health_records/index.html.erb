@@ -5,12 +5,15 @@
     </div>
   </div>
 
-  <table class="table table-hover table-inverse mt-4">
+  <table class="table table-striped mt-4">
       <thead>
         <tr>
           <th></th>
+          <th>User Name</th>
           <th>Body Parts</th>
           <th>Exercises</th>
+          <th>Date and Time</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -18,14 +21,21 @@
           <tr>
             <td>
               <%= link_to(health_record.user) do %>
-                <%= image_tag health_record.user.get_profile_image, size:'100x100' %>
+                <%= image_tag health_record.user.get_profile_image, size:'30x30' %>
               <% end %>
             </td>
             <td>
-              <%= link_to health_record.part, health_record %>
+              <%= health_record.user.name %>
             </td>
             <td>
-              <%= health_record.exercise %>    
+              <%= health_record.part %>
+            </td>
+            <td>
+              <%= health_record.exercise %>
+            </td>
+            <td></td>
+            <td>
+              <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-info btn-sm" %>
             </td>
           </tr>
         <% end %>

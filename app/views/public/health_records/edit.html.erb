@@ -4,4 +4,41 @@
       <h2><strong>Editing Record</strong></h2>
     </div>
   </div>
+
+  <div class="col-md-12 d-flex justify-content-center mr-5">
+    <%= form_with model: @health_record, url: health_record_path, method: :patch do |f| %>
+      <table class="table table-borderless">
+        <thead>
+          <tr></tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>Body Parts</strong></td>
+            <td><%= f.text_field :part, class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td><strong>Exercises</strong></td>
+            <td><%= f.text_field :exercise, class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td><strong>Training Contents</strong></td>
+            <td><%= f.text_field :training_content, class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td><strong>Diet Contents</strong></td>
+            <td><%= f.text_area :diet_content, class: "form-control" %></td>
+          </tr>
+          <tr>
+            <td><strong>Today's impressions</strong></td>
+            <td><%= f.text_area :today_impression, class: "form-control" %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mt-3 text-center">
+        <%= f.submit "Save Changes", class: "btn btn-warning btn-sm" %>
+      </div>
+    <% end %>
+  </div>
 </div>
+

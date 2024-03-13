@@ -2,7 +2,7 @@ class Public::HealthRecordsController < ApplicationController
   # ログイン済みのユーザーか？
   before_action :authenticate_user!
   # ログインしているユーザーのみが実行できるアクション
-  before_action :ensure_correct_user!, only: [:edit, :destroy, :update]
+  before_action :ensure_correct_user, only: [:edit, :destroy, :update]
 
   def new
     # 新規作成
@@ -16,9 +16,9 @@ class Public::HealthRecordsController < ApplicationController
       # 内容を保存する
       redirect_to health_record_path(@health_record), notice: "You have created records successfully."
     else
-      # できなければindexページに戻る
+      # できなければnewページに戻る
       @health_records = HealthRecord.all
-      render :index, notice: "errors prohibited this obj from being saved;"
+      render :new, notice: "errors prohibited this obj from being saved;"
     end
   end
 
@@ -61,7 +61,7 @@ class Public::HealthRecordsController < ApplicationController
     params.require(:health_record).permit(:part, :exercise, :training_content, :diet_content, :today_impression)
   end
 
-  def ensure_correst_user
+  def ensure_correct_user
     @health_record = HealthRecord.find(params[:id])
     unless @health_record.user_id == current_user.id
       redirect_to health_records_path
