@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       get "followers" => "relationships#followers", as: "followers"
     end
     resources :health_records, only: [:index, :new, :show, :create, :edit, :destroy, :update] do
-      resource :favorite, only: [:create, :destroy]
+      resource :favorites, only: [:create, :destroy]
       resources :health_record_comments, only: [:create, :edit, :destroy]
     end
     get "/search", to: "searches#search"

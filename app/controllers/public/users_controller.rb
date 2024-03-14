@@ -1,7 +1,7 @@
 class Public::UsersController < ApplicationController
   # ログイン済みのユーザーか？
   before_action :authenticate_user!
-  # ゲストユーザーのみに実行される処理でここではeditアクションのみ
+  # ゲストユーザーのみに実行される処理でここではedit、updateアクションのみ
   before_action :ensure_guest_user, only: [:edit]
 
   def index

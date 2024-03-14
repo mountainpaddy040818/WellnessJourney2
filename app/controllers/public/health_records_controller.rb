@@ -30,6 +30,7 @@ class Public::HealthRecordsController < ApplicationController
   def show
     # レコード内容を1件ずつ表示
     @health_record = HealthRecord.find(params[:id])
+    @health_record_comment = HealthRecordComment.new
   end
 
   def edit

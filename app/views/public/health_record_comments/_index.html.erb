@@ -1,0 +1,20 @@
+<table>
+  <tbody>
+    <% health_record.health_record_comments.each do |health_record_comment| %>
+    <tr>
+      <td>
+        <%= link_to user_path(health_record_comment.user) do %>
+          <%= image_tag health_record_comment.user.get_profile_image, size: "50x50" %><br>
+          <%= health_record_comment.user.name %>
+        <% end %>
+      </td>
+      <td><%= health_record_comment.comment %></td>
+      <td>
+        <% if health_record_comment.user == current_user %>
+          <%= link_to "Destroy", health_record_health_record_comment_path(book, book_comment), method: :delete, class: "btn btn-sm btn-danger float-end" %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

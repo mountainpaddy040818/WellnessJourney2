@@ -28,6 +28,17 @@
           <td><strong>Today's impressions</strong></td>
           <td><%= @health_record.today_impression %></td>
         </tr>
+        <tr>
+          <td></td>
+          <!--<td id="favorite_btn_<%#= @health_record.id %>">-->
+            <%#= render "favorites/btn", health_record: @health_record %>
+          <!--</td>-->
+        </tr>
+        <tr>
+          <td>
+            コメント数： <%= @health_record.health_record_comments.count %>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -41,4 +52,7 @@
     <% end %>    
     <%= link_to "Back", health_records_path, class: "btn btn-secondary btn-sm mr-3" %>
   </div>
+  <!--<%#= render "health_record_comments/index", health_record: @health_record %>-->
+  <!--<%#= render "health_record_comments/form", health_record: @health_record, health_record_comment: @health_record_comment %>-->
+     
 </div>
