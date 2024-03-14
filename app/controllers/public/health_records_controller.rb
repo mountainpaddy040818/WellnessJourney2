@@ -59,7 +59,7 @@ class Public::HealthRecordsController < ApplicationController
   private
 
   def health_record_params
-    params.require(:health_record).permit(:part, :exercise, :training_content, :diet_content, :today_impression)
+    params.require(:health_record).permit(:part, :exercise, :training_content, :diet_content, :today_impression, :comment)
   end
 
   def ensure_correct_user

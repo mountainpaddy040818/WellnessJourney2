@@ -1,10 +1,10 @@
 <% if health_record.favorited_by?(current_user) %>
-  <%= link_to health_record_favorite_path(health_record), method: :delete, remote: true do %>
+  <%= link_to health_record_favorites_path(health_record), method: :delete, remote: true do %>
     <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
     <%= content_tag :span, health_record.favorites.count, style: "color: red;" %>
   <% end %>
 <% else %>
-  <%= link_to health_record_favorite_path(health_record), method: :post, remote: true do %>
+  <%= link_to health_record_favorites_path(health_record), method: :post, remote: true do %>
     <i class="fas fa-heart" aria-hidden="true"></i>
     <%= health_record.favorites.count %>
   <% end %>

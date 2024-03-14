@@ -29,30 +29,26 @@
           <td><%= @health_record.today_impression %></td>
         </tr>
         <tr>
-          <td></td>
-          <!--<td id="favorite_btn_<%#= @health_record.id %>">-->
-            <%#= render "favorites/btn", health_record: @health_record %>
-          <!--</td>-->
-        </tr>
-        <tr>
-          <td>
-            コメント数： <%= @health_record.health_record_comments.count %>
+          <td id="favorite_btn_<%= @health_record.id %>">
+            <%= render "public/favorites/btn", health_record: @health_record %>
           </td>
+          <td></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="mt-3 text-center">
+  <div class="mt-3 text-center mb-3">
     <% if @health_record.user == current_user %>
       <%= link_to "Edit", edit_health_record_path(@health_record.id), class: "btn btn-success btn-sm mr-3" %>
-      <%= link_to "Destroy", @health_record, method: :delete, 
-        data: { confirm: 'Are you sure really?' }, 
+      <%= link_to "Destroy", @health_record, method: :delete,
+        data: { confirm: 'Are you sure really?' },
         class: "btn btn-danger btn-sm mr-3" %>
-    <% end %>    
+    <% end %>
     <%= link_to "Back", health_records_path, class: "btn btn-secondary btn-sm mr-3" %>
   </div>
-  <!--<%#= render "health_record_comments/index", health_record: @health_record %>-->
-  <!--<%#= render "health_record_comments/form", health_record: @health_record, health_record_comment: @health_record_comment %>-->
-     
+
+  <%= render "public/health_record_comments/index", health_record: @health_record %>
+  <%= render "public/health_record_comments/form", health_record: @health_record, health_record_comment: @health_record_comment %>
+
 </div>

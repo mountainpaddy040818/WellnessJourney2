@@ -1,8 +1,11 @@
 class Public::UsersController < ApplicationController
   # ログイン済みのユーザーか？
   before_action :authenticate_user!
-  # ゲストユーザーのみに実行される処理でここではedit、updateアクションのみ
+  #
+  before_action :ensure_correct_user, only: [:edit, :update]
+  # ゲストユーザーのみに実行される処理でここではeditアクションのみ
   before_action :ensure_guest_user, only: [:edit]
+
 
   def index
     # 登録済みユーザーの情報を全て取得
@@ -44,4 +47,12 @@ class Public::UsersController < ApplicationController
       notice: "Guest users are unable to navigate to the profile editing page."
     end
   end
+
+  def ensure_correct_user
+    @user = User.find(params[:id])
+    unless @user.id == current_user.id
+      redirect_to user_path(current_user)
+    end
+  end
+
 end

@@ -14,6 +14,10 @@
           <th>Exercises</th>
           <th>Date and Time</th>
           <th></th>
+          <th></th>
+          <th class="text-right">
+            Comments
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -42,11 +46,11 @@
                   class: "btn btn-danger btn-sm mr-3" %>
               <% end %>
             </td>
-            <!--<td id="favorite_btn_<%#= health_record.id %>">-->
-              <%#= render "favorites/btn", health_record: health_record %>
-            <!--</td>-->
-            <td>
-              コメント数： <%= health_record.health_record_comments.count %>
+            <td id="favorite_btn_<%= health_record.id %>">
+              <%= render "public/favorites/btn", health_record: health_record %>
+            </td>
+            <td class="text-center">
+              <%= health_record.health_record_comments.count %>
             </td>
           </tr>
         <% end %>
