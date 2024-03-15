@@ -8,14 +8,6 @@ class Public::HealthRecordCommentsController < ApplicationController
     @health_record_comment = current_user.health_record_comments.new(health_record_comment_params)
     @health_record_comment.health_record_id = health_record.id
     @health_record_comment.save
-    redirect_to redirect_back(fallback_location: root_path)
-    # @health_record = HealthRecord.find(params[:health_record_id])
-    # @health_record_comment = HealthRecordComment.new(comment_params)
-    # @health_record_comment.user_id = current_user.id
-    # @health_record_comment.health_record_id = @health_record.id
-    # unless @health_record_comment.save
-    #   render 'error'
-    # end
   end
 
   def destroy
@@ -26,7 +18,6 @@ class Public::HealthRecordCommentsController < ApplicationController
     else
       flash[:error] = "自分のコメントではないため削除できません"
     end
-    redirect_back(fallback_location: root_path)
   end
 
   private

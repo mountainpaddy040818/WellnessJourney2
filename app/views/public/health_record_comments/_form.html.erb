@@ -1,8 +1,8 @@
-<%= form_with model: [health_record, health_record_comment] do |f| %>
+<%= form_with model: [health_record, health_record_comment], local: false do |f| %>
   <div class="mb-3">
     Comments: <%= health_record.health_record_comments.count %>
   </div>
-    <%= f.text_area :comment, rows: '10', placeholder: "コメントをここに", class: "form-control width-5" %>
+    <%= f.text_area :comment, rows: '10', placeholder: "コメントをここに", class: "form-control width-5", id: "comment_textarea"  %>
   <div class="mt-3 mb-4 text-right">
     <%= f.submit "Send", class: "btn btn-success btn-sm" %>
   </div>
