@@ -27,7 +27,7 @@
 - 筋トレに関する豆知識の共有 etc.
 
 ## URL
-https://wellnessjourney.xyz
+## https://wellnessjourney.xyz
 ​
 ## 設計書
 
