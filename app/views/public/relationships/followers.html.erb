@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="col-md-12 mx-auto">
+    <div class="row col-lg-8 justify-content-left">
+      <h2><strong>Follower Users</strong></h2>
+    </div>
+  </div>
+
+  <div class="col-md-12 d-flex justify-content-center mr-5">
+    <table class="table table-borderless">
+      <% @users.each do |user| %>
+        <thead>
+          <th></th>
+          <th>User Name</th>
+          <th>Introduction</th>
+        </thead>
+        <tbody>
+          <td>
+            <%= link_to(user) do %>
+              <%= image_tag user.get_profile_image, size: '50x50' %>
+            <% end %>
+          </td>
+          <td>
+            <%= user.name %>
+          </td>
+          <td>
+            <%= user.introduction %>
+          </td>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>

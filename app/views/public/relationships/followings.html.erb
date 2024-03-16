@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="col-md-12 mx-auto">
+    <div class="row col-lg-8 justify-content-left">
+      <h2><strong>Follow Users</strong></h2>
+    </div>
+  </div>
+
+  <div class="col-md-12 d-flex justify-content-center mr-5">
+    <table class="table table-borderless">
+      <thead>
+        <th></th>
+        <th>User Name</th>
+        <th>Introduction</th>
+      </thead>
+      <% @users.each do |user| %>
+        <tbody>
+          <td>
+            <%= link_to(user) do %>
+              <%= image_tag user.get_profile_image, size: '50x50' %>
+            <% end %>
+          </td>
+          <td>
+            <%= user.name %>
+          </td>
+          <td>
+            <%= user.introduction %>
+          </td>
+          <td>
+            <% if current_user != user %>
+              <%= render "public/relationships/btn", user: user, options: { class: ""} %>
+            <% end %>
+          </td>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>

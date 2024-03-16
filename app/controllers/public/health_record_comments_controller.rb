@@ -6,13 +6,13 @@ class Public::HealthRecordCommentsController < ApplicationController
   def create
     @health_record = HealthRecord.find(params[:health_record_id])
     @health_record_comment = current_user.health_record_comments.new(health_record_comment_params)
-    @health_record_comment.health_record_id = health_record.id
+    @health_record_comment.health_record_id = @health_record.id
     @health_record_comment.save
   end
 
   def destroy
     health_record_comment = HealthRecordComment.find_by(health_record_id: params[:health_record_id], id: params[:id])
-    if health_record.user_id == current_user.id
+    if health_record_comment.user_id == current_user.id
       health_record_comment.destroy
       flash[:success] = "コメントが削除されました"
     else
@@ -22,7 +22,7 @@ class Public::HealthRecordCommentsController < ApplicationController
 
   private
 
-  def comment_params
+  def health_record_comment_params
     params.require(:health_record_comment).permit(:comment)
   end
 

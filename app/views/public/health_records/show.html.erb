@@ -5,9 +5,15 @@
     </div>
   </div>
 
-  <div class="col-md-12 d-flex justify-content-center mr-5">
+  <div class="col-md-12 justify-content-center mr-5">
     <table class="table table-borderless">
       <tbody>
+        <tr>
+          <td>Record's User</td>
+          <td>
+            <%= @health_record.user.name %>
+          </td>
+        </tr>
         <tr>
           <td><strong>Body Parts</strong></td>
           <td><%= @health_record.part %></td>
@@ -29,10 +35,14 @@
           <td><%= @health_record.today_impression %></td>
         </tr>
         <tr>
+          <td>Posted Time</td>
+          <td><%= @health_record.created_at.strftime("%Y.%m.%d %H:%M:%S") %></td>
+        </tr>
+        <tr>
+          <td>Favorites</td>
           <td id="favorite_btn_<%= @health_record.id %>">
             <%= render "public/favorites/btn", health_record: @health_record %>
           </td>
-          <td></td>
         </tr>
       </tbody>
     </table>

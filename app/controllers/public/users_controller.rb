@@ -5,11 +5,12 @@ class Public::UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update]
   # ゲストユーザーのみに実行される処理でここではeditアクションのみ
   before_action :ensure_guest_user, only: [:edit]
-
-
+  
+  before_action :set_user, only: [:followings, :followers]
+  
   def index
     # 登録済みユーザーの情報を全て取得
-    @users = User.all
+    @users = User.page(params[:page])
   end
 
   def show
@@ -30,6 +31,21 @@ class Public::UsersController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def followings
+    @users = @user.followings
+  end
+  
+  def followers
+    @users = @user.followers
+  end
+  
+  def favorites
+    @user = User.find(params[:id])
+    favorites = Favorite.where(user_id: @user.id).pluck(:health_record_id)
+    @favorite_records = HealthRecord.find(favorites)
+    @health_record = HealthRecord.find(params[:id])
   end
 
   private
@@ -53,6 +69,10 @@ class Public::UsersController < ApplicationController
     unless @user.id == current_user.id
       redirect_to user_path(current_user)
     end
+  end
+  
+  def set_user
+    @user = User.find(params[:id])
   end
 
 end

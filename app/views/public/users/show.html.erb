@@ -11,7 +11,7 @@
         <tr>
           <td><strong></strong></td>
           <td>
-            <%= image_tag @user.get_profile_image, size: "250x200" %>
+            <%= image_tag @user.get_profile_image, size: "200x200" %>
           </td>
         </tr>
         <tr>
@@ -26,6 +26,12 @@
           <td><strong>Target</strong></td>
           <td><%= @user.target %></td>
         </tr>
+        <tr>
+          <td>Joined</td>
+          <td>
+            <%= @user.created_at.strftime("%Y.%m.%d") %>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -33,6 +39,7 @@
   <div class="mt-3 text-center">
     <% if @user == current_user %>
       <%= link_to "Edit", edit_user_path(@user.id), class: "btn btn-success btn-sm mr-3" %>
+      <%= link_to "Favorites", favorites_user_path, class: "btn btn-dark btn-sm mr-3" %>
     <% elsif @user.name == "Guest User" %>
     <% end %>
     <%= link_to "Back", users_path, class: "btn btn-secondary btn-sm mr-3" %>

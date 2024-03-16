@@ -24,7 +24,7 @@ class Public::HealthRecordsController < ApplicationController
 
   def index
     # レコード情報を全て取得
-    @health_records = HealthRecord.all
+    @health_records = HealthRecord.page(params[:page])
   end
 
   def show

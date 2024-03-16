@@ -16,11 +16,11 @@
         <%= render "layouts/header" %>
       </header>
       <main>
-        <div class="text-success">
-          <div class="text-center">
+        <h4 class="text-info">
+          <div class="text-center mt-2">
             <%= flash[:notice] %>
           </div>
-        </div>
+        </h4>
         <%= yield %>
       </main>
       <footer>

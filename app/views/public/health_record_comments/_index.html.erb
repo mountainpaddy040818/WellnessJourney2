@@ -1,17 +1,20 @@
-<table>
+<table class="table table-borderless">
   <tbody>
     <% health_record.health_record_comments.each do |health_record_comment| %>
     <tr>
       <td>
         <%= link_to user_path(health_record_comment.user) do %>
-          <%= image_tag health_record_comment.user.get_profile_image, size: "50x50" %><br>
-          <%= health_record_comment.user.name %>
+          <%= image_tag health_record_comment.user.get_profile_image, size: "40x40" %><br>
         <% end %>
+          <div class="mt-2">
+            <%= health_record_comment.user.name %>
+          </div>
       </td>
       <td><%= health_record_comment.comment %></td>
       <td>
         <% if health_record_comment.user == current_user %>
-          <%= link_to "Destroy", health_record_health_record_comment_path(health_record, health_record_comment), method: :delete, class: "btn btn-sm btn-danger float-end", remote: true %>
+          <%= link_to "Destroy", health_record_health_record_comment_path(health_record, health_record_comment), method: :delete,
+          data: { confirm: 'Are you sure really?' }, class: "btn btn-sm btn-danger float-end", remote: true %>
         <% end %>
       </td>
     </tr>

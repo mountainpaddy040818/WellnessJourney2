@@ -8,11 +8,11 @@
   <table class="table table-striped mt-4">
       <thead>
         <tr>
-          <th>Image</th>
+          <th></th>
           <th>User Name</th>
           <th>Body Parts</th>
           <th>Exercises</th>
-          <th>Date and Time</th>
+          <th>Posted Time</th>
           <th></th>
           <th></th>
           <th class="text-right">
@@ -37,10 +37,12 @@
             <td>
               <%= health_record.exercise %>
             </td>
-            <td></td>
+            <td>
+              <%= health_record.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
+            </td>
             <td>
               <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-info btn-sm mr-3" %>
-              <% if health_record.user == current_user %>
+              <% if health_record.user_id == current_user.id %>
                 <%= link_to "Destroy", health_record, method: :delete,
                   data: { confirm: 'Are you sure really?' },
                   class: "btn btn-danger btn-sm mr-3" %>
