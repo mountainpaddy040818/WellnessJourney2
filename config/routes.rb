@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'relationships/create'
-  get 'relationships/destroy'
-
   devise_for :users, skip: [:passwords], controllers: {
     # ユーザーのdevise
     registrations: "public/registrations",
@@ -31,7 +28,7 @@ Rails.application.routes.draw do
         get :followings, :followers
       end
       member do
-        get :favorites 
+        get :favorites
       end
     end
     resources :health_records, only: [:index, :new, :show, :create, :edit, :destroy, :update] do
