@@ -5,11 +5,12 @@
     </div>
   </div>
 
-  <div class="col-md-3 d-flex justify-content-center mr-5 mt-5">
+  <div class="col-md-10 d-flex justify-content-center mr-5 mt-5">
     <table class="table table-borderless">
       <thead>
         <tr>
           <th>Title</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +18,9 @@
           <% @favorite_records.each do |health_record| %>
             <td>
               <%= link_to health_record.part, health_record_path(health_record) %>
+            </td>
+            <td>
+              <%= health_record.exercise %>
             </td>
           <% end %>
         </tr>

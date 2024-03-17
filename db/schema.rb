@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_03_07_043001) do
+ActiveRecord::Schema.define(version: 2024_03_17_101316) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -67,6 +67,16 @@ ActiveRecord::Schema.define(version: 2024_03_07_043001) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "health_record_tags", force: :cascade do |t|
+    t.integer "health_record_id", null: false
+    t.integer "record_tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["health_record_id", "record_tag_id"], name: "index_health_record_tags_on_health_record_id_and_record_tag_id", unique: true
+    t.index ["health_record_id"], name: "index_health_record_tags_on_health_record_id"
+    t.index ["record_tag_id"], name: "index_health_record_tags_on_record_tag_id"
+  end
+
   create_table "health_records", force: :cascade do |t|
     t.integer "user_id"
     t.string "part", null: false
@@ -76,6 +86,14 @@ ActiveRecord::Schema.define(version: 2024_03_07_043001) do
     t.text "today_impression", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "tag_name"
+  end
+
+  create_table "record_tags", force: :cascade do |t|
+    t.string "tag_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tag_name"], name: "index_record_tags_on_tag_name", unique: true
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -99,4 +117,6 @@ ActiveRecord::Schema.define(version: 2024_03_07_043001) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "health_record_tags", "health_records"
+  add_foreign_key "health_record_tags", "record_tags"
 end

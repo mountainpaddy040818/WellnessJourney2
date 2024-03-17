@@ -35,7 +35,8 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
       resources :health_record_comments, only: [:create, :edit, :destroy]
     end
-    get "/search", to: "searches#search"
+    get "search", to: "searches#search"
+    get "search_tag" => "health_records#search_tag"
   end
 
   namespace :admin do

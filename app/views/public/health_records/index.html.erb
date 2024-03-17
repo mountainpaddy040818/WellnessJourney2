@@ -3,6 +3,11 @@
     <div class="row col-lg-8 justify-content-left">
       <h2><strong>Records List</strong></h2>
     </div>
+    <% @tag_list.each do |list| %>
+      <i class="fa-sharp fa-solid fa-tag"></i>
+      <%= link_to list.tag_name,search_tag_path(record_tag_id: list.id) %>
+      <%= "(#{list.health_records.count})" %>
+    <% end %>
   </div>
 
   <table class="table table-striped mt-4">

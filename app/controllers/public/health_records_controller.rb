@@ -12,7 +12,9 @@ class Public::HealthRecordsController < ApplicationController
   def create
     @health_record = HealthRecord.new(health_record_params)
     @health_record.user_id = current_user.id
+    tag_list = params[:health_record][:tag_name].split(',')
     if @health_record.save
+      @health_record.save_record_tags(tag_list)
       # 内容を保存する
       redirect_to health_record_path(@health_record), notice: "You have created records successfully."
     else
@@ -25,21 +27,27 @@ class Public::HealthRecordsController < ApplicationController
   def index
     # レコード情報を全て取得
     @health_records = HealthRecord.page(params[:page])
+    @tag_list = RecordTag.all
   end
 
   def show
     # レコード内容を1件ずつ表示
     @health_record = HealthRecord.find(params[:id])
     @health_record_comment = HealthRecordComment.new
+    @tag_list = @health_record.record_tags.pluck(:tag_name).join(',')
+    @health_record_tags = @health_record.record_tags
   end
 
   def edit
     @health_record = HealthRecord.find(params[:id])
+    @tag_list = @health_record.record_tags.pluck(:tag_name).join(',')
   end
 
   def update
     @health_record = HealthRecord.find(params[:id])
+    tag_list = params[:health_record][:tag_name].split(',')
     if @health_record.update(health_record_params)
+      @health_record.save_record_tags(tag_list)
       # 変更内容を適用
       redirect_to health_record_path(@health_record), notice: "You have updated records successfully."
     else
@@ -56,10 +64,19 @@ class Public::HealthRecordsController < ApplicationController
     redirect_to health_records_path, notice: "You have destoryed records successfully."
   end
 
+  def search_tag
+    #検索結果画面でもタグ一覧表示
+    @tag_list = RecordTag.all
+    #検索されたタグを受け取る
+    @tag = RecordTag.find(params[:record_tag_id])
+    #検索されたタグに紐づく投稿を表示
+    @health_records = @tag.health_records
+  end
+
   private
 
   def health_record_params
-    params.require(:health_record).permit(:part, :exercise, :training_content, :diet_content, :today_impression, :comment)
+    params.require(:health_record).permit(:part, :exercise, :training_content, :diet_content, :today_impression, :comment, :tag_name)
   end
 
   def ensure_correct_user

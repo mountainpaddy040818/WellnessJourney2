@@ -44,6 +44,15 @@
             <%= render "public/favorites/btn", health_record: @health_record %>
           </td>
         </tr>
+        <tr>
+          <td>Tags</td>
+          <td>
+            <% @health_record_tags.each do |tag| %>
+            <i class="fa-sharp fa-solid fa-tag"></i>
+              <%= link_to tag.tag_name,search_tag_path(record_tag_id: tag.id) %>
+            <% end %>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

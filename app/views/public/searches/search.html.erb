@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="col-md-12 mx-auto">
+    <div class="row col-lg-8 justify-content-left">
+      <h2><strong>Search Results</strong></h2>
+    </div>
+  </div>
+
+  <table class="table table-striped mt-3">
+    <!--検索対象モデルがUserの時 -->
+    <% if @range == "User" %>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= link_to user.name, user_path(user) %>
+            </td>
+            <td>
+              <%= user.introduction %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    <% else %>
+      <!--検索対象モデルがUserではない時(= 検索対象モデルがHealthRecordの時) -->
+      <tbody>
+        <% @health_records.each do |health_record| %>
+          <tr>
+            <td><%= link_to health_record.part, health_record_path(health_record) %></td>
+            <td><%= health_record.exercise %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    <% end %>
+  </table>
+
+</div>

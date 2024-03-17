@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="col-md-12 mx-auto">
+    <div class="row col-lg-8 justify-content-left mb-3">
+      <h2>All posts with the tag ” <%= @tag.tag_name %> ”</h2>
+    </div>
+    <div class="row col-lg-8 justify-content-left">
+      <% @tag_list.each do |list|%>
+        <div class="mr-3">
+          <i class="fa-sharp fa-solid fa-tag"></i>
+          <%= link_to list.tag_name,search_tag_path(record_tag_id: list.id) %>
+          <%= "(#{list.health_records.count})" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="row col-lg-8 justify-content-center mt-3">
+      <table class="table table-borderless">
+        <tbody>
+          <% @health_records.each do |health_record| %>
+            <tr>
+              <td>
+                <%= link_to health_record.part, health_record_path(health_record) %>
+              </td>
+              <td>
+                <%= health_record.exercise %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>

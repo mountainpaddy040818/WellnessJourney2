@@ -27,6 +27,13 @@
           <td><strong>Today's impressions</strong></td>
           <td><%= f.text_area :today_impression, class: "form-control", rows: "5" %></td>
         </tr>
+        <tr>
+          <td><strong>Tags</strong></td>
+          <td>
+            <label>" , " で区切ると複数タグ登録できます</label>
+            <%= f.text_field :tag_name, value: @tag_list, class: 'form-control' %>
+          </td>
+        </tr>
       </tbody>
     </table>
     <div class="text-center mb-3">

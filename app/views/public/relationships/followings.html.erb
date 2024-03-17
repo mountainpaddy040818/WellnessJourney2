@@ -9,11 +9,11 @@
     <table class="table table-borderless">
       <thead>
         <th></th>
-        <th>User Name</th>
-        <th>Introduction</th>
+        <th></th>
+        <th></th>
       </thead>
-      <% @users.each do |user| %>
-        <tbody>
+      <tbody>
+        <% @users.each do |user| %>
           <td>
             <%= link_to(user) do %>
               <%= image_tag user.get_profile_image, size: '50x50' %>
@@ -30,8 +30,8 @@
               <%= render "public/relationships/btn", user: user, options: { class: ""} %>
             <% end %>
           </td>
-        </tbody>
-      <% end %>
+        <% end %>
+      </tbody>
     </table>
   </div>
 </div>
