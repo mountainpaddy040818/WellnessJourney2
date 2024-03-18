@@ -16,7 +16,9 @@
         <p>経験者の意見を聞きたい方などなど</p>
         <p>どのような用途でもご利用いただくことが出来ます！</p>
         <p>Let's enjoy your fitness life!</p>
-        <% if user_signed_in? %>
+        <% if admin_signed_in? %>
+          <p></p>
+        <% elsif user_signed_in? %>
           <p></p>
         <% else %>
           <p>まずは↓の「Guest Log in」から使用感を試してみてください！！</p>
@@ -28,7 +30,9 @@
   <div class= "container mt-5">
     <div class="row">
       <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-        <% if user_signed_in? %>
+        <% if admin_signed_in? %>
+          <p></p>
+        <% elsif user_signed_in? %>
           <p></p>
         <% else %>
           <%= link_to 'Guest Log in', users_guest_sign_in_path, class: "btn btn-dark btn-block btn-lg mb-3 sign_in", method: :post %>
