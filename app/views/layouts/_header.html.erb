@@ -27,8 +27,8 @@
       </li>
 
       <li class="nav-item">
-        <%= link_to destroy_user_session_path, class: 'nav-link text-dark' do %>
-          Log out
+        <%= link_to destroy_admin_session_path, class: 'nav-link text-dark' do %>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>Log out
         <% end %>
       </li>
 
@@ -94,7 +94,9 @@
     </ul>
 
     <% if admin_signed_in? %>
-      <p>Admin Logging in now!</p>
+      <p class="text-dark mt-3 ml-auto mr-5">
+        Admin Logging in now!
+      </p>
     <% elsif user_signed_in? %>
       <p class="text-dark mt-3 ml-auto mr-5">
         ようこそ！<%= current_user.name %>さん!

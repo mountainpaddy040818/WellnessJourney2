@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    byebug
-    p "hogehoge"
     devise_parameter_sanitizer.permit(:sign_in, keys:[:email]) # 注目
   end
   
