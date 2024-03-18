@@ -42,5 +42,5 @@ yarn-debug.log*
 ; 個人情報
 /.env
 /config/environments/development.rb
-/config/initializers/devise.rb
+
 /db/seeds.rb
