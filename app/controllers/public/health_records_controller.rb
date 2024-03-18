@@ -7,6 +7,7 @@ class Public::HealthRecordsController < ApplicationController
   def new
     # 新規作成
     @health_record = HealthRecord.new
+    # @genre = Genre.find(params[:id])
   end
 
   def create
@@ -41,10 +42,12 @@ class Public::HealthRecordsController < ApplicationController
   def edit
     @health_record = HealthRecord.find(params[:id])
     @tag_list = @health_record.record_tags.pluck(:tag_name).join(',')
+    # @genre = Genre.find(params[:id])
   end
 
   def update
     @health_record = HealthRecord.find(params[:id])
+    @genre = Genre.find(params[:id])
     tag_list = params[:health_record][:tag_name].split(',')
     if @health_record.update(health_record_params)
       @health_record.save_record_tags(tag_list)
@@ -76,7 +79,7 @@ class Public::HealthRecordsController < ApplicationController
   private
 
   def health_record_params
-    params.require(:health_record).permit(:part, :exercise, :training_content, :diet_content, :today_impression, :comment, :tag_name)
+    params.require(:health_record).permit(:name, :part, :exercise, :training_content, :diet_content, :today_impression, :comment, :tag_name)
   end
 
   def ensure_correct_user
