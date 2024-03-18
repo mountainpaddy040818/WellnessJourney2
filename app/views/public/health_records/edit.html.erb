@@ -9,8 +9,7 @@
       <tbody>
         <tr>
           <td><strong>Body Parts</strong></td>
-          <td><%= f.text_field :part, class: "form-control" %></td>
-          <!--<td><%#= f.collection_select :genre_id, Genre.all, :id, :name, {}, {class: 'form-control'} %></td>-->
+          <td><%= f.collection_select :genre_id, Genre.all, :id, :name, {}, {class: 'form-control'} %></td>
         </tr>
         <tr>
           <td><strong>Exercises</strong></td>

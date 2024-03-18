@@ -1,13 +1,14 @@
-<h1 class="text-center">ジャンル編集</h1>
+<h1 class="text-center mt-4">Editing Genres</h1>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-4">
   <div class="col-md-6">
-    <%= form_with(model: @genre, url: admin_genre_path(@genre), method: :patch, class: 'form-group') do |f| %>
-      <%= f.label :name, "ジャンル名", class: 'form-label' %>
+    <%= form_with model: @genre, url: admin_genre_path(@genre), method: :patch, class: 'form-group' do |f| %>
+      <%= f.label :name, "genre name", class: 'form-label' %>
       <div class="input-group mb-3">
-        <%= f.text_field :name, class: 'form-control', placeholder: 'ジャンル名を入力してください' %>
+        <%= f.text_field :name, class: 'form-control', placeholder: 'Please input genre name. ' %>
         <div class="input-group-append">
-          <%= f.submit "更新", class: 'btn btn-success' %>
+          <%= f.submit "save changes", class: 'btn btn-success btn-sm' %>
+          <%= link_to "Back", admin_genres_path , class: "btn btn-secondary btn-sm" %>
         </div>
       </div>
     <% end %>

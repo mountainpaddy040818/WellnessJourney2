@@ -15,6 +15,9 @@
         <% if health_record_comment.user == current_user %>
           <%= link_to "Destroy", health_record_health_record_comment_path(health_record, health_record_comment), method: :delete,
           data: { confirm: 'Are you sure really?' }, class: "btn btn-sm btn-danger float-end", remote: true %>
+        <!--<%# elsif admin_signed_in? %>-->
+        <!--  <%#= link_to "Destroy", health_record_health_record_comment_path(health_record, health_record_comment), method: :delete,-->
+        <!--  data: { confirm: 'Are you sure really?' }, class: "btn btn-sm btn-danger float-end", remote: true %>-->
         <% end %>
       </td>
     </tr>

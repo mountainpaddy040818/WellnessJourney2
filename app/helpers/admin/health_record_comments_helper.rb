@@ -1,0 +1,2 @@
+module Admin::HealthRecordCommentsHelper
+end

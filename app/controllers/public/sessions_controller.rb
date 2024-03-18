@@ -19,7 +19,7 @@ class Public::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
-    root_path
+    health_records_path
   end
 
   def after_sign_out_path_for(resource)
@@ -29,7 +29,7 @@ class Public::SessionsController < Devise::SessionsController
   def guest_sign_in
     user = User.guest
     sign_in user
-    redirect_to user_path(user), notice: "I am logged in as a Guest User."
+    redirect_to user_path(user), notice: "I'm logged in as a Guest User."
   end
 
   protected
