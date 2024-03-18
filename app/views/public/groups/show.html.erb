@@ -1,0 +1,66 @@
+<div class='container mt-5'>
+  <div class='col-md-12 mx-auto'>
+    <div class='row col-lg-8 justify-content-left'>
+      <h2><strong>Group Detail</strong></h2>
+    </div>
+  </div>
+
+  <div class="col-md-12 d-flex justify-content-center mr-5">
+    <table class='table table-borderless'>
+      <tbody>
+
+        <tr>
+          <td></td>
+          <td>
+            <% if @group.group_image.attached? %>
+              <%= image_tag @group.group_image,size: "200x200" %>
+            <% else %>
+              <%= image_tag 'no_image', size: "200x200" %>
+            <% end %>
+          </td>
+        </tr>
+
+        <tr>
+          <td><strong>Group Name</strong></td>
+          <td><%= @group.name %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Introduction</strong></td>
+          <td><%= @group.introduction %></td>
+        </tr>
+
+        <!--<tr>-->
+        <!--  <td>Group's owner</td>-->
+        <!--  <td><%#= @group.owner_id.name %></td>-->
+        <!--</tr>-->
+
+        <tr>
+          <td>Created Day</td>
+          <td><%= @group.created_at.strftime("%Y.%m.%d") %></td>
+        </tr>
+
+        <tr>
+          <td>Members</td>
+          <td>
+            <% @group.users.each do |user| %>
+          　　<li style="list-style: none;"><%= user.name %></li>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-3 text-center mb-4">
+    <% if @group.is_owned_by?(current_user) %>
+  　　<%= link_to 'Edit', edit_group_path(@group), class: "btn btn-sm btn-success mr-3" %>
+  　　<%= link_to 'Notice an Event', group_new_mail_path(@group), class: "btn btn-sm btn-info" %>
+    <% elsif @group.includesUser?(current_user)%>
+  　　<%= link_to 'Leave this group', group_group_users_path(@group), method: :delete, class: "btn btn-sm btn-danger mr-3" %>
+    <% else %>
+  　　<%= link_to 'Join this group', group_group_users_path(@group), method: :post, class: "btn btn-sm btn-success mr-3" %>
+    <% end %>
+    <%= link_to "Back", groups_path, class: "btn btn-secondary btn-sm mr-3" %>
+  </div>
+</div>

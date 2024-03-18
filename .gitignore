@@ -40,3 +40,5 @@ yarn-debug.log*
 .yarn-integrity
 ; 個人情報
 /.env
+/development.rb
+/devise.rb

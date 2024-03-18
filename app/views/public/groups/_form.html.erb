@@ -1,0 +1,29 @@
+<%= form_with model: group, local: true do |f| %>
+  <div class="form-group mt-4">
+    <div class="mb-2">
+      Group Name
+    </div>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <div class="mb-2">
+      Introduction
+    </div>
+    <%= f.text_area :introduction, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <div class="mb-2">
+      Group Image
+    </div>
+    <div class="text-center">
+      <%= f.file_field :group_image, class: "form-control-file" , accept: "image/*" %>
+    </div>
+  </div>
+
+  <div class="form-group text-center mt-5">
+    <%= f.submit class: 'btn btn-success btn-sm mr-3' %>
+    <%= link_to "Back", groups_path, class: "btn btn-secondary btn-sm mr-3" %>
+  </div>
+<% end %>

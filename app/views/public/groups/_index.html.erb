@@ -1,0 +1,50 @@
+<table class='table table-striped mt-5'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Group Name</th>
+      <th>Introduction</th>
+      <th>Created Day</th>
+      <th>Members</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% groups.each do |group| %>
+
+      <tr>
+        <td>
+          <% if group.group_image.attached? %>
+            <%= image_tag group.group_image,size:"50x50" %>
+          <% else %>
+            <%= image_tag 'no_image', size: "50x50" %>
+          <% end %>
+        </td>
+
+        <td>
+          <%= group.name %>
+        </td>
+
+        <td>
+          <%= group.introduction %>
+        </td>
+
+        <td>
+          <%= group.created_at.strftime("%Y.%m.%d") %>
+        </td>
+
+        <td class="text-center">
+          <%= group.group_users.count %>
+        </td>
+
+        <td>
+          <%= link_to "Detail", group_path(group.id), class: "btn btn-info btn-sm mr-3" %>
+          <% if group.is_owned_by?(current_user) %>
+            <%= link_to 'Edit', edit_group_path(group), class: "group_#{group.id} btn btn-sm btn-success" %>
+          <% end %>
+        </td>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>

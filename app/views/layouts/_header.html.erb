@@ -7,74 +7,86 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     <% if admin_signed_in? %>
-    
+
       <li class="nav-item active">
         <%= link_to admin_health_record_health_record_comments_path, class: 'nav-link text-dark' do %>
           Comments
         <% end %>
       </li>
-      
+
       <li class="nav-item">
         <%= link_to admin_users_path, class: 'nav-link text-dark' do %>
           Users
         <% end %>
       </li>
-      
+
       <li class="nav-item">
         <%= link_to destroy_user_session_path, class: 'nav-link text-dark' do %>
           Log out
         <% end %>
       </li>
-      
+
     <% elsif user_signed_in? %>
-    
+
       <li class="nav-item">
         <%= link_to users_path, class: 'nav-link text-dark' do %>
           <i class="fa-solid fa-users"></i>Users
         <% end %>
       </li>
-      
+
       <li class="nav-item">
         <%= link_to health_records_path, class: 'nav-link text-dark' do %>
           <i class="fa-solid fa-file-pen"></i>Records
         <% end %>
       </li>
-      
+
       <li class="nav-item">
         <%= link_to  new_health_record_path, class: 'nav-link text-dark' do %>
           <i class="fa-solid fa-plus"></i>New post
         <% end %>
       </li>
-      
+
+      <li>
+        <%= link_to new_group_path, class: 'nav-link text-dark' do %>
+          <i class="fa-solid fa-group-arrows-rotate"></i>New grouping
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to groups_path, class: 'nav-link text-dark' do %>
+          <i class="fa-solid fa-user-group"></i>All groups
+        <% end %>
+      </li>
+
       <li class="nav-item">
         <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-dark' do  %>
           <i class="fa-solid fa-arrow-right-from-bracket"></i>Log out
         <% end %>
       </li>
-      
+
     <% else %>
-    
+
       <li class="nav-item">
         <%= link_to about_path, class: 'nav-link text-dark' do %>
           <i class="fa-brands fa-readme"></i>About
         <% end %>
       </li>
-      
+
       <li class="nav-item">
         <%= link_to new_user_registration_path, class: 'nav-link text-dark' do %>
           <i class="fa-solid fa-user-plus"></i>Sign up
         <% end %>
       </li>
-      
+
       <li class="nav-item">
         <%= link_to new_user_session_path, class: 'nav-link text-dark' do %>
           <i class="fa-solid fa-arrow-right-to-bracket"></i>Log in
         <% end %>
       </li>
-      
+
     <% end %>
     </ul>
-    
+
     <% if admin_signed_in? %>
       <p>Admin Logging in now!</p>
     <% elsif user_signed_in? %>

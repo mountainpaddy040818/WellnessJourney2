@@ -19,6 +19,8 @@ class User < ApplicationRecord
   has_many :followings, through: :active_relationships , source: :followed
   # フォロワーを取得
   has_many :followers, through: :passive_relationships, source: :follower
+  
+  has_many :group_users, dependent: :destroy
 
   validates :name, length: { maximum: 50 }
   validates :introduction, length: { maximum: 50 }
