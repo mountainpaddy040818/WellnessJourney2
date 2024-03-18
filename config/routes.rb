@@ -48,9 +48,9 @@ Rails.application.routes.draw do
   namespace :admin do
     # 管理者のルーティング
     root "homes#top"
-    resources :users, only: [:index, :show, :edit, :update]
-    resources :health_records, only: [:index, :show, :destroy] do
-      resources :health_record_comments, only: [:index, :show, :destroy]
+    resources :users, only: [:index, :edit, :update, :destroy]
+    resources :health_records, only: [:index, :edit, :destroy] do
+      resources :health_record_comments, only: [:edit, :destroy]
     end
     resources :genres, only: [:index, :create, :edit, :update]
   end
