@@ -1,8 +1,6 @@
 class Public::UsersController < ApplicationController
   # ログイン済みのユーザーか？
   before_action :authenticate_user!
-  # ログイン済みの管理者であるか？
-  before_action :authenticate_admin!
   # url直接入力を防ぐ
   before_action :ensure_correct_user, only: [:edit, :update]
   # ゲストユーザーのみに実行される処理でここではeditアクションのみ
