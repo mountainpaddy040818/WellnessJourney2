@@ -21,6 +21,8 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
 
   has_many :group_users, dependent: :destroy
+  has_many :groups, through: :group_users, dependent: :destroy
+  has_many :owned_groups, class_name: "Group"
 
   validates :name, length: { maximum: 50 }
   validates :introduction, length: { maximum: 50 }

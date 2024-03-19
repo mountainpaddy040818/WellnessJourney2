@@ -43,7 +43,7 @@
               <%= health_record.exercise %>
             </td>
             <td>
-              <%= health_record.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
+              <i class="far fa-clock"></i><%= health_record.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
             </td>
             <td>
               <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-info btn-sm mr-3" %>

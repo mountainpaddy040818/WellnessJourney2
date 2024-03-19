@@ -29,7 +29,7 @@
               <%= health_record.part %>
             </td>
             <td>
-              <%= health_record.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
+              <i class="far fa-clock"></i><%= health_record.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
             </td>
             <td>
               <%= link_to "Edit", edit_admin_health_record_path(health_record.id), class: "btn btn-success btn-sm" %>
@@ -39,4 +39,8 @@
       </tbody>
     </table>
   </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+  <%= paginate @health_records, theme: 'twitter-bootstrap-4' %>
 </div>

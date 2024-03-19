@@ -31,13 +31,15 @@
         </tr>
 
         <tr>
-          <td>Group's owner</td>
-          <td><%#= @group.owner_id_user.name %></td>
+          <td>Group's Owner</td>
+          <td>
+            <%= @group.owner ? @group.owner.name : "unknown" %>
+          </td>
         </tr>
 
         <tr>
           <td>Created Day</td>
-          <td><%= @group.created_at.strftime("%Y.%m.%d") %></td>
+          <td><i class="far fa-clock"></i><%= @group.created_at.strftime("%Y.%m.%d") %></td>
         </tr>
 
         <tr>
