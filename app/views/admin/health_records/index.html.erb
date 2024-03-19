@@ -4,4 +4,39 @@
       <h1><strong>All Records</strong></h1>
     </div>
   </div>
+
+  <div class="col-md-12">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Posted User</th>
+          <th class="">Body Parts</th>
+          <th>Posted Time</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @health_records.each do |health_record| %>
+          <tr>
+            <td>
+              <%= image_tag health_record.user.get_profile_image, size: "30x30" %>
+            </td>
+            <td>
+              <%= health_record.user.name %>
+            </td>
+            <td class="">
+              <%= health_record.part %>
+            </td>
+            <td>
+              <%= health_record.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
+            </td>
+            <td>
+              <%= link_to "Edit", edit_admin_health_record_path(health_record.id), class: "btn btn-success btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

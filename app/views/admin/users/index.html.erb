@@ -4,4 +4,43 @@
       <h1><strong>All Users</strong></h1>
     </div>
   </div>
+
+  <div class="col-md-12">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th></th>
+          <th>User Name</th>
+          <th>Introduction</th>
+          <th>Joined Day</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= image_tag user.get_profile_image, size: "30x30" %>
+            </td>
+            <td>
+              <%= user.name %>
+            </td>
+            <td>
+              <%= user.introduction %>
+            </td>
+            <td>
+              <%= user.created_at.strftime("%Y.%m.%d") %>
+            </td>
+            <td>
+              <%= link_to "Edit", edit_admin_user_path(user.id), class: "btn btn-success btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+  <%= paginate @users, theme: 'twitter-bootstrap-4' %>
 </div>

@@ -1,7 +1,9 @@
 class Public::HealthRecordsController < ApplicationController
   # ログイン済みのユーザーか？
   before_action :authenticate_user!
-  # ログインしているユーザーのみが実行できるアクション
+  # ログイン済みの管理者であるか？
+  before_action :authenticate_admin!
+  # url直接入力を防ぐ
   before_action :ensure_correct_user, only: [:edit, :destroy, :update]
 
   def new
