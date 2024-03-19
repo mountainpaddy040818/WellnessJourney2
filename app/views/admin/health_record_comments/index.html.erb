@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="col-md-12 mx-auto">
+    <div class="row col-lg-8 justify-content-left">
+      <h1><strong>Editing Comments of Admin</strong></h1>
+    </div>
+  </div>
+
+  <div class="col-md-6 mt-5">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th><strong>Commented User</strong></th>
+          <th><strong>Comment</strong></th>
+          <th><strong>Commented Time</strong></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @health_record_comments.each do |health_record_comment| %>
+          <tr>
+            <td>
+              <%= health_record_comment.user %>
+            </td>
+            <td>
+              <%= health_record_comment.comment %>
+            </td>
+            <td>
+              <%= health_record_comment.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
+            </td>
+            <td>
+              <%= link_to "Destroy", admin_health_record_health_record_comment(health_record_comment), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-danger btn-sm mr-3" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+  <%= paginate @health_record_comments, theme: 'twitter-bootstrap-4' %>
+</div>

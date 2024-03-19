@@ -4,16 +4,62 @@
       <h1><strong>Editing Record Details of Admin</strong></h1>
     </div>
   </div>
-  
+
   <div class="col-md-12 mt-5">
     <%= form_with model: [:admin, @health_record] do |f| %>
-      <table>
+      <table class="table table-borderless">
         <tbody>
           <tr>
-            
+            <td><strong>Posted User</strong></td>
+            <td>
+              <%= @health_record.user.name %>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Body Parts</strong></td>
+            <td>
+              <%= @health_record.part %>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Exercise</strong></td>
+            <td>
+              <%= @health_record.exercise %>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Training Contents</strong></td>
+            <td>
+              <%= @health_record.training_content %>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Diet Contents</strong></td>
+            <td>
+              <%= @health_record.diet_content %>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Today's impressions</strong></td>
+            <td>
+              <%= @health_record.today_impression %>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Posted Time</strong></td>
+            <td>
+              <i class="far fa-clock"></i><%= @health_record.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <%= link_to "Destroy", @health_record, method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-danger btn-sm mr-3" %>
+              <%= link_to "Back", admin_health_records_path, class: "btn btn-secondary btn-sm mr-3" %>
+            </td>
           </tr>
         </tbody>
       </table>
     <% end %>
-  </div>  
+  </div>
 </div>
