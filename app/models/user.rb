@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :followings, through: :active_relationships , source: :followed
   # フォロワーを取得
   has_many :followers, through: :passive_relationships, source: :follower
-  
+
   has_many :group_users, dependent: :destroy
 
   validates :name, length: { maximum: 50 }
@@ -65,10 +65,25 @@ class User < ApplicationRecord
       find_or_create_by!(email: GUEST_USER_EMAIL) do |user|
         user.password = SecureRandom.urlsafe_base64
         user.name = "Guest User"
+        user.introduction = "hello"
+        user.target = "hello"
       end
     end
 
     def guest_user?
       email == GUEST_USER_EMAIL
     end
+
+  def user_status
+    if is_active == true
+      "available"
+    else
+      "unavailable"
+    end
+  end
+
+  def active_for_authentication?
+    super && (is_active == true)
+  end
+
 end

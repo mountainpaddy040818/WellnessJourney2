@@ -13,7 +13,7 @@
           <th>User Name</th>
           <th>Introduction</th>
           <th>Joined Day</th>
-          <th></th>
+          <th>User Status</th>
         </tr>
       </thead>
       <tbody>
@@ -30,6 +30,17 @@
             </td>
             <td>
               <%= user.created_at.strftime("%Y.%m.%d") %>
+            </td>
+            <td>
+              <% if user.is_active == true %>
+                <strong class="text-success">
+                  <%= user.user_status %>
+                </strong>
+              <% else %>
+                <strong class="text-danger">
+                  <%= user.user_status %>
+                </strong>
+              <% end %>
             </td>
             <td>
               <%= link_to "Edit", edit_admin_user_path(user.id), class: "btn btn-success btn-sm" %>
