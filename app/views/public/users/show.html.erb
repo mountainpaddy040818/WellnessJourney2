@@ -36,7 +36,7 @@
     </table>
   </div>
 
-  <div class="mt-3 text-center">
+  <div class="mt-3 text-center mb-3">
     <% if @user == current_user %>
       <%= link_to "Edit", edit_user_path(@user.id), class: "btn btn-success btn-sm mr-3" %>
       <%= link_to "Favorites", favorites_user_path, class: "btn btn-dark btn-sm mr-3 ml-3" %>

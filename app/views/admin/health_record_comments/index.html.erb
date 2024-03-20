@@ -1,11 +1,11 @@
 <div class="container mt-5">
   <div class="col-md-12 mx-auto">
     <div class="row col-lg-8 justify-content-left">
-      <h1><strong>Editing Comments of Admin</strong></h1>
+      <h1><strong>All Comments</strong></h1>
     </div>
   </div>
 
-  <div class="col-md-6 mt-5">
+  <div class="col-md-12 mt-5">
     <table class="table table-borderless">
       <thead>
         <tr>
@@ -19,16 +19,16 @@
         <% @health_record_comments.each do |health_record_comment| %>
           <tr>
             <td>
-              <%= health_record_comment.user %>
+              <%= health_record_comment.user.name %>
             </td>
             <td>
               <%= health_record_comment.comment %>
             </td>
             <td>
-              <%= health_record_comment.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
+              <i class="far fa-clock"></i><%= health_record_comment.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
             </td>
             <td>
-              <%= link_to "Destroy", admin_health_record_health_record_comment(health_record_comment), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-danger btn-sm mr-3" %>
+              <%= link_to "Destroy", admin_health_record_comment_path(health_record_comment.id), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-danger btn-sm mr-3" %>
             </td>
           </tr>
         <% end %>

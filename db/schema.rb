@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_03_18_120343) do
+ActiveRecord::Schema.define(version: 2024_03_20_114003) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -104,7 +104,6 @@ ActiveRecord::Schema.define(version: 2024_03_18_120343) do
 
   create_table "health_records", force: :cascade do |t|
     t.integer "user_id"
-    t.string "part", null: false
     t.string "exercise", null: false
     t.text "training_content", null: false
     t.text "diet_content", null: false
@@ -112,6 +111,8 @@ ActiveRecord::Schema.define(version: 2024_03_18_120343) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "tag_name"
+    t.integer "genre_id"
+    t.string "name"
   end
 
   create_table "record_tags", force: :cascade do |t|

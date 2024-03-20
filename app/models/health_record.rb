@@ -6,10 +6,10 @@ class HealthRecord < ApplicationRecord
 
   has_many :health_record_tags, dependent: :destroy
   has_many :record_tags, through: :health_record_tags
-  
-  has_many :genles
 
-  validates :part, presence:true, length: { maximum: 20 }
+  belongs_to :genre
+
+ # validates :part, presence:true, length: { maximum: 20 }
   validates :exercise, presence:true, length: { maximum: 50 }
   validates :training_content, presence:true, length: { maximum: 50 }
   validates :diet_content, presence:true, length: { maximum: 50 }

@@ -33,11 +33,11 @@
         <% end %>
       </li>
 
-      <!--<li class="nav-item">-->
-      <!--  <%#= link_to admin_health_record_health_record_comments_path, class: "nav-link text-dark" do %>-->
-      <!--    <i class="fa-solid fa-comments"></i>All Comments-->
-      <!--  <%# end %>-->
-      <!--</li>-->
+      <li class="nav-item">
+        <%= link_to admin_health_record_comments_path, class: "nav-link text-dark" do %>
+          <i class="fa-solid fa-comments"></i>All Comments
+        <% end %>
+      </li>
 
       <li class="nav-item">
         <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
