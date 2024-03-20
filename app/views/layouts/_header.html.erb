@@ -67,13 +67,13 @@
 
       <li>
         <%= link_to new_group_path, class: 'nav-link text-dark' do %>
-          <i class="fa-solid fa-group-arrows-rotate"></i>New grouping
+          <i class="fa-solid fa-group-arrows-rotate"></i>New Grouping
         <% end %>
       </li>
 
       <li>
         <%= link_to groups_path, class: 'nav-link text-dark' do %>
-          <i class="fa-solid fa-user-group"></i>All groups
+          <i class="fa-solid fa-user-group"></i>All Groups
         <% end %>
       </li>
 
@@ -100,6 +100,12 @@
       <li class="nav-item">
         <%= link_to new_user_session_path, class: 'nav-link text-dark' do %>
           <i class="fa-solid fa-arrow-right-to-bracket"></i>Log in
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to new_admin_session_path, class: 'nav-link text-dark' do %>
+          <i class="fa-brands fa-black-tie"></i> Admin Log in
         <% end %>
       </li>
 
