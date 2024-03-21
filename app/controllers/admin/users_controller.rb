@@ -17,6 +17,12 @@ class Admin::UsersController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_back(fallback_location: root_path)
+  end
 
   private
 
