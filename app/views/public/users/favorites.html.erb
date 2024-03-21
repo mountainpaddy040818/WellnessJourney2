@@ -17,7 +17,7 @@
         <tr>
           <% @favorite_records.each do |health_record| %>
             <td>
-              <%= link_to health_record.part, health_record_path(health_record) %>
+              <%= link_to health_record.genre.name, health_record_path(health_record) %>
             </td>
             <td>
               <%= health_record.exercise %>
