@@ -26,7 +26,6 @@
         <% end %>
       </li>
 
-
       <li class="nav-item">
         <%= link_to admin_health_records_path, class: "nav-link text-dark" do %>
           <i class="fa-solid fa-file-pen"></i>All Records
@@ -36,6 +35,18 @@
       <li class="nav-item">
         <%= link_to admin_health_record_comments_path, class: "nav-link text-dark" do %>
           <i class="fa-solid fa-comments"></i>All Comments
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to admin_record_tags_path, class: "nav-link text-dark" do %>
+          <i class="fa-solid fa-tags"></i>All Tags
+        <% end %>
+      </li>
+      
+      <li>
+        <%= link_to admin_groups_path, class: "nav-link text-dark" do %>
+          <i class="fa-solid fa-people-group"></i>All Groups
         <% end %>
       </li>
 

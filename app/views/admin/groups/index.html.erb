@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="col-md-12 mx-auto">
+    <div class="row col-lg-8 justify-content-left">
+      <h1><strong>All Groups</strong></h1>
+    </div>
+  </div>
+
+  <div class="col-md-12 mt-5">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th><strong>Group Name</strong></th>
+          <th><strong>Introduction</strong></th>
+          <th><strong>Created Time</strong></th>
+          <th><strong></strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @groups.each do |group| %>
+          <tr>
+            <td>
+              <%= group.name %>
+            </td>
+            <td>
+              <%= group.introduction %>
+            </td>
+            <td>
+              <i class="far fa-clock"></i><%= group.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
+            </td>
+            <td>
+              <%= link_to "Destroy", admin_group_path(group.id), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-danger btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+  <%= paginate @groups, theme: 'twitter-bootstrap-4' %>
+</div>

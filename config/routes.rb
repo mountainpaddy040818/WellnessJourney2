@@ -38,7 +38,7 @@ Rails.application.routes.draw do
     get "search", to: "searches#search"
     get "search_tag" => "health_records#search_tag"
 
-    resources :groups, only: [:new, :index, :show, :create, :edit, :update] do
+    resources :groups, only: [:new, :index, :show, :create, :edit, :update, :destroy] do
       resource :group_users, only: [:create, :destroy]
       get "new/mail" => "groups#new_mail"
       get "send/mail" => "groups#send_mail"
@@ -52,6 +52,8 @@ Rails.application.routes.draw do
     resources :health_records, only: [:index, :edit, :destroy] 
     resources :health_record_comments, only: [:index, :destroy]
     resources :genres, only: [:index, :create, :edit, :update]
+    resources :record_tags, only: [:index, :destroy]
+    resources :groups, only: [:index, :destroy]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
