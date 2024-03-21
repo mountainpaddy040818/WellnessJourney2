@@ -37,7 +37,7 @@
             <%= link_to user.followers.count, user_followers_path(user) %>
           </td>
           <td>
-            <i class="far fa-clock"></i><%= user.created_at.strftime("%Y.%m.%d") %>
+            <i class="far fa-clock"></i><%= l user.created_at %>
           </td>
           <td>
             <% if current_user != user %>

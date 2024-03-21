@@ -25,7 +25,7 @@
       <tbody>
         <% @health_records.each do |health_record| %>
           <tr>
-            <td><%= link_to health_record.part, health_record_path(health_record) %></td>
+            <td><%= link_to health_record.genre.name, health_record_path(health_record) %></td>
             <td><%= health_record.exercise %></td>
           </tr>
         <% end %>

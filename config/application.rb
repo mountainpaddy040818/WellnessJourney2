@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module WellnessJourney
   class Application < Rails::Application
+    config.time_zone = 'Tokyo'
+    config.i18n.default_locale = :ja
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 

@@ -29,7 +29,7 @@
               <%= health_record.genre.name %>
             </td>
             <td>
-              <i class="far fa-clock"></i><%= health_record.created_at.strftime("%Y.%m.%d %H:%M:%S") %>
+              <i class="far fa-clock"></i><%= l health_record.created_at %>
             </td>
             <td>
               <%= link_to "Edit", edit_admin_health_record_path(health_record.id), class: "btn btn-success btn-sm" %>

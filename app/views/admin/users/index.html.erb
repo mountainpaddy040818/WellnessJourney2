@@ -29,7 +29,7 @@
               <%= user.introduction %>
             </td>
             <td>
-              <i class="far fa-clock"></i><%= user.created_at.strftime("%Y.%m.%d") %>
+              <i class="far fa-clock"></i><%= l user.created_at %>
             </td>
             <td>
               <% if user.is_active == true %>
