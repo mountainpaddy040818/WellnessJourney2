@@ -5,25 +5,25 @@
     </div>
   </div>
 
-  <div class="col-md-10 d-flex justify-content-center mr-5 mt-5">
+  <div class="col-md-12 d-flex justify-content-center mr-5 mt-5">
     <table class="table table-borderless">
       <thead>
         <tr>
-          <th><strong>Title</strong></th>
+          <th>Title<strong></strong></th>
           <th>Opinion</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <% @favorite_records.each do |health_record| %>
-            <td>
-              <%= link_to health_record.genre.name, health_record_path(health_record) %>
-            </td>
-            <td>
-              <%= health_record.exercise %>
-            </td>
-          <% end %>
-        </tr>
+        <% @favorite_records.each do |health_record| %>
+          <tr>
+              <td>
+                <%= link_to health_record.genre.name, health_record_path(health_record) %>
+              </td>
+              <td>
+                <%= health_record.exercise %>
+              </td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
