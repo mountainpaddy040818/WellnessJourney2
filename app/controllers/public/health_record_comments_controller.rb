@@ -14,9 +14,9 @@ class Public::HealthRecordCommentsController < ApplicationController
     health_record_comment = HealthRecordComment.find_by(health_record_id: params[:health_record_id], id: params[:id])
     if health_record_comment.user_id == current_user.id
       health_record_comment.destroy
-      flash[:success] = "コメントが削除されました"
+      flash[:notice] = "You have destroyed comments."
     else
-      flash[:error] = "自分のコメントではないため削除できません"
+      flash[:error] = "You cannot destroy comments."
     end
   end
 

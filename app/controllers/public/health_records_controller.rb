@@ -23,8 +23,8 @@ class Public::HealthRecordsController < ApplicationController
       redirect_to health_record_path(@health_record), notice: "You have created records successfully."
     else
       # できなければnewページに戻る
-      @health_records = HealthRecord.all
-      render :new, notice: "errors prohibited this obj from being saved;"
+      flash[:error] = "some errors prohibited this obj from being saved."
+      render :new
     end
   end
 
@@ -61,8 +61,8 @@ class Public::HealthRecordsController < ApplicationController
       redirect_to health_record_path(@health_record), notice: "You have updated records successfully."
     else
       # できなければeditページに戻る
-      @health_records = HealthRecord.all
-      render :edit, notice: "errors prohibited this obj from being saved;"
+      flash[:error] = "some errors prohibited this obj from being saved."
+      render :edit
     end
   end
 
