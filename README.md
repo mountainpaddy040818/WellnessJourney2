@@ -26,8 +26,8 @@
 - 食事内容の投稿
 - 筋トレに関する豆知識の共有 etc.
 
-## URL
-## https://wellnessjourney.xyz
+<!--## URL-->
+<!--## https://wellnessjourney.xyz-->
 ​
 ## 設計書
 
