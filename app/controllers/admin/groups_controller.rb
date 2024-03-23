@@ -3,10 +3,10 @@ class Admin::GroupsController < ApplicationController
   def index
     @groups = Group.page(params[:page]).per(10)
   end
-  
+
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    redirect_back(follback_location: root_path)
+    redirect_to admin_groups_path, notice: "You have destroyed a group successfully."
   end
 end
