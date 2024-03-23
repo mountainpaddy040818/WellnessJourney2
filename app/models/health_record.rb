@@ -31,7 +31,7 @@ class HealthRecord < ApplicationRecord
     elsif search == "partial_match"
       @health_records = HealthRecord.joins(:genre).where("genres.name LIKE ?", "%#{word}%")
     else
-      @health_record = HealthRecord.all
+      @health_records = HealthRecord.all
     end
   end
 

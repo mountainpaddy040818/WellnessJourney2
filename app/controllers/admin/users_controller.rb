@@ -6,7 +6,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+
   end
 
   def update
@@ -17,7 +17,7 @@ class Admin::UsersController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy
