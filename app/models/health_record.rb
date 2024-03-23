@@ -23,13 +23,13 @@ class HealthRecord < ApplicationRecord
   # 検索方法分岐
   def self.looks(search, word)
     if search == "perfect_match"
-      @health_record = HealthRecord.where("part LIKE?","#{word}")
+      @health_records = HealthRecord.joins(:genre).where("genres.name LIKE ?", "%#{word}%")
     elsif search == "forward_match"
-      @health_record = HealthRecord.where("part LIKE?","#{word}%")
+      @health_records = HealthRecord.joins(:genre).where("genres.name LIKE ?", "#{word}%")
     elsif search == "backward_match"
-      @health_record = HealthRecord.where("part LIKE?","%#{word}")
+      @health_records = HealthRecord.joins(:genre).where("genres.name LIKE ?", "%#{word}")
     elsif search == "partial_match"
-      @health_record = HealthRecord.where("part LIKE?","%#{word}%")
+      @health_records = HealthRecord.joins(:genre).where("genres.name LIKE ?", "%#{word}%")
     else
       @health_record = HealthRecord.all
     end
