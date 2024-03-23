@@ -3,15 +3,12 @@ class Public::GroupsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
-    @health_record = HealthRecord.new
     @groups = Group.all
     @user = User.find(current_user.id)
   end
 
   def show
-    @health_record = HealthRecord.new
     @group = Group.find(params[:id])
-    @user = User.find(params[:id])
   end
 
   def new
@@ -40,11 +37,11 @@ class Public::GroupsController < ApplicationController
       render "edit"
     end
   end
-  
+
   def new_mail
     @group = Group.find(params[:group_id])
   end
-  
+
   def send_mail
     @group = Group.find(params[:group_id])
     group_users = @group.users
