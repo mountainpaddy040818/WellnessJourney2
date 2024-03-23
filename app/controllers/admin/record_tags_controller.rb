@@ -9,7 +9,7 @@ class Admin::RecordTagsController < ApplicationController
   def destroy
     @record_tag = RecordTag.find(params[:id])
     @record_tag.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_to admin_record_tags_path, notice: "You have destroyed a tag successfully."
   end
-  
+
 end

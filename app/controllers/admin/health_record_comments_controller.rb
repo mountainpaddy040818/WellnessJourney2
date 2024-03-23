@@ -9,7 +9,7 @@ class Admin::HealthRecordCommentsController < ApplicationController
   def destroy
     @health_record_comment = HealthRecordComment.find(params[:id])
     @health_record_comment.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_to admin_health_record_comments_path, notice: "You have destroyed a comment successfully."
   end
 
 end
