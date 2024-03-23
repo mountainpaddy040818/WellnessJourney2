@@ -11,14 +11,14 @@ class Admin::HealthRecordsController < ApplicationController
 
   def destroy
     @health_record = HealthRecord.find(params[:id])
-    @health_record.destroy(health_record_params)
+    @health_record.destroy
     redirect_to admin_health_records_path, notice: "You have destroyed records successfully."
   end
 
   private
 
   def health_record_params
-    params.require(:health_record).permit(:name, :part, :comment)
+    params.require(:health_record).permit(:name, :genre_id, :exercise, :training_content, :diet_content, :today_impression)
   end
 
 end
