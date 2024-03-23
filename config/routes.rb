@@ -67,7 +67,7 @@ Rails.application.routes.draw do
     # コメント管理
     resources :health_record_comments, only: [:index, :destroy]
     # ジャンル管理
-    resources :genres, only: [:index, :create, :edit, :update]
+    resources :genres, only: [:index, :create, :edit, :update, :destroy]
     # タグ管理
     resources :record_tags, only: [:index, :destroy]
     # グループ管理

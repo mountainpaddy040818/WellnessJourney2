@@ -6,7 +6,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
-
+    @user = User.find(params[:id])
   end
 
   def update
@@ -21,7 +21,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_to admin_users_path, notice: "You have destroyed an user successfully."
   end
 
   private

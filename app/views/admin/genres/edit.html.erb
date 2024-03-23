@@ -8,6 +8,7 @@
         <%= f.text_field :name, class: 'form-control', placeholder: 'Please input genre name. ' %>
         <div class="input-group-append">
           <%= f.submit "save changes", class: 'btn btn-success btn-sm' %>
+          <%= link_to "Destroy", admin_genre_path(@genre.id), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-danger btn-sm" %>
           <%= link_to "Back", admin_genres_path , class: "btn btn-secondary btn-sm" %>
         </div>
       </div>
