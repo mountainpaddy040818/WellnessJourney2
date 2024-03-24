@@ -7,7 +7,7 @@
       <% @tag_list.each do |list|%>
         <div class="mr-3">
           <i class="fa-sharp fa-solid fa-tag"></i>
-          <%= link_to list.tag_name,search_tag_path(record_tag_id: list.id) %>
+          <%= link_to list.tag_name,search_tag_path(record_tag_id: list.id), class: "text-dark" %>
           <%= "(#{list.health_records.count})" %>
         </div>
       <% end %>
@@ -18,7 +18,7 @@
           <% @health_records.each do |health_record| %>
             <tr>
               <td>
-                <%= link_to health_record.genre.name, health_record_path(health_record) %>
+                <%= link_to health_record.genre.name, health_record_path(health_record), class: "text-dark" %>
               </td>
               <td>
                 <%= health_record.exercise %>

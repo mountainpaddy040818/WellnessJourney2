@@ -8,25 +8,33 @@
   <div class="col-md-12 d-flex justify-content-center mr-5">
     <table class="table table-borderless">
       <% @users.each do |user| %>
-        <thead>
-          <th></th>
-          <th></th>
-          <th></th>
-        </thead>
         <tbody>
-          <td>
-            <%= link_to(user) do %>
-              <%= image_tag user.get_profile_image, size: '50x50' %>
-            <% end %>
-          </td>
-          <td>
-            <%= user.name %>
-          </td>
-          <td>
-            <%= user.introduction %>
-          </td>
+          <tr>
+            <td>
+              <%= link_to(user) do %>
+                <%= image_tag user.get_profile_image, size: '50x50' %>
+              <% end %>
+            </td>
+            <td>
+              <%= user.name %>
+            </td>
+            <td>
+              <%= user.introduction %>
+            </td>
+            <td>
+              <% if current_user != user %>
+                <%= render "public/relationships/btn", user: user, options: { class: ""} %>
+              <% end %>
+            </td>
+          </tr>
         </tbody>
       <% end %>
     </table>
+  </div>
+
+  <div class="row">
+    <div class="actions col-lg-7 offset-lg-5 mt-3">
+      <%= link_to "Back", users_path, class: "btn btn-outline-secondary btn-sm" %>
+    </div>
   </div>
 </div>
