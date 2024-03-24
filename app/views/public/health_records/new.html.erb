@@ -12,22 +12,24 @@
           <td><%= f.collection_select :genre_id, Genre.all, :id, :name, {}, {class: 'form-control'} %></td>
         </tr>
         <tr>
-          <td><strong>Exercises</strong></td>
+          <td>
+            <strong>Exercise</strong><br>
+            <strong>(exercise name?)</strong>
+          </td>
           <td><%= f.text_field :exercise, class: "form-control" %></td>
         </tr>
         <tr>
           <td>
-            <strong>
-              Training Contents
-            </strong>
-            <strong>
-              (weight,count,set)
-            </strong>
+            <strong>Training Contents</strong><br>
+            <strong>(weight?, count?, set?)</strong>
           </td>
           <td><%= f.text_field :training_content, class: "form-control" %></td>
         </tr>
         <tr>
-          <td><strong>Diet Contents</strong></td>
+          <td>
+            <strong>Diet Contents</strong><br>
+            <strong>(What else did you eat today?)</strong>
+          </td>
           <td><%= f.text_area :diet_content, class: "form-control", rows: "5" %></td>
         </tr>
         <tr>
