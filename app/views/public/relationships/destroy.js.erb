@@ -1,1 +1,1 @@
-document.getElementById('follow-ajax').innerHTML = "<%= j(render partial: 'public/relationships/btn', locals: { user: @user }) %>"
+$('.mt-3 text-center mb-3-<%= @user.id %>').html("<%= j(render partial: 'public/relationships/btn', locals: {user: @user}) %>")
