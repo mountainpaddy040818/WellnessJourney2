@@ -2,6 +2,7 @@
 
 body {
   font-family: cursive;
+  // background-color: #8FBC8F;
 }
 
 footer {
@@ -25,17 +26,14 @@ footer {
   color: red;
 }
 
-
-
-
 @media (min-width: 992px) {
-.container.bg-warning {
+.container.bg-secondary {
   max-width: 100%;
  }
 }
 
 @media (min-width: 540px) {
-.container.bg-warning {
+.container.bg-secondary {
   max-width: 100%;
  }
 }

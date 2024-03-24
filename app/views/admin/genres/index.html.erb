@@ -13,7 +13,7 @@
       <div class="input-group mb-3">
         <%= f.text_field :name, class: 'form-control', placeholder: 'Please input genre name.' %>
         <div class="input-group-append">
-          <%= f.submit "create genre", class: 'btn btn-success' %>
+          <%= f.submit "create genre", class: 'btn btn-outline-success' %>
         </div>
       </div>
     <% end %>
@@ -33,7 +33,7 @@
         <% @genres.each do |genre| %>
           <tr>
             <td><%= genre.name %></td>
-            <td><%= link_to 'edit', edit_admin_genre_path(genre), class: 'btn btn-success btn-sm' %></td>
+            <td><%= link_to 'edit', edit_admin_genre_path(genre), class: 'btn btn-outline-success btn-sm' %></td>
           </tr>
         <% end %>
       </tbody>

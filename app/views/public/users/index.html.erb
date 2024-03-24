@@ -31,10 +31,10 @@
             <%= user.introduction %>
           </td>
           <td>
-            <%= link_to user.followings.count, user_followings_path(user) %>
+            <%= link_to user.followings.count, user_followings_path(user), class: "text-dark" %>
           </td>
           <td>
-            <%= link_to user.followers.count, user_followers_path(user) %>
+            <%= link_to user.followers.count, user_followers_path(user), class: "text-dark" %>
           </td>
           <td>
             <i class="far fa-clock"></i><%= l user.created_at %>
@@ -45,7 +45,7 @@
             <% end %>
           </td>
           <td>
-            <%= link_to "Detail", user_path(user.id), class: "btn btn-info btn-sm" %>
+            <%= link_to "Detail", user_path(user.id), class: "btn btn-outline-info btn-sm" %>
           </td>
         </tr>
       <% end %>

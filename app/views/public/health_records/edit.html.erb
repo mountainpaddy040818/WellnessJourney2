@@ -44,11 +44,11 @@
       </tbody>
     </table>
     <div class="mt-3 text-center mb-3">
-      <%= f.submit "Save Changes", class: "btn btn-warning btn-sm mr-3" %>
+      <%= f.submit "Save Changes", class: "btn btn-outline-success btn-sm mr-3" %>
       <%= link_to "Destroy", @health_record, method: :delete,
         data: { confirm: 'Are you sure really?' },
-        class: "btn btn-danger btn-sm mr-3" %>
-      <%= link_to "Back", health_record_path(@health_record.id), class: "btn btn-secondary btn-sm mr-3" %>
+        class: "btn btn-outline-danger btn-sm mr-3" %>
+      <%= link_to "Back", health_record_path(@health_record.id), class: "btn btn-outline-secondary btn-sm mr-3" %>
     </div>
   <% end %>
 </div>

@@ -56,13 +56,13 @@
 
   <div class="mt-3 text-center mb-4">
     <% if @group.is_owned_by?(current_user) %>
-  　　<%= link_to 'Edit', edit_group_path(@group), class: "btn btn-sm btn-success mr-3" %>
-  　　<%= link_to 'Notice an Event', group_new_mail_path(@group), class: "btn btn-sm btn-info mr-5" %>
+  　　<%= link_to 'Edit', edit_group_path(@group), class: "btn btn-sm btn-outline-success mr-3" %>
+  　　<%= link_to 'Notice an Event', group_new_mail_path(@group), class: "btn btn-sm btn-outline-info mr-5" %>
     <% elsif @group.includesUser?(current_user)%>
-  　　<%= link_to 'Leave this group', group_group_users_path(@group), method: :delete, class: "btn btn-sm btn-danger mr-3" %>
+  　　<%= link_to 'Leave this group', group_group_users_path(@group), method: :delete, class: "btn btn-sm btn-outline-danger mr-3" %>
     <% else %>
-  　　<%= link_to 'Join this group', group_group_users_path(@group), method: :post, class: "btn btn-sm btn-success mr-3" %>
+  　　<%= link_to 'Join this group', group_group_users_path(@group), method: :post, class: "btn btn-sm btn-outline-success mr-3" %>
     <% end %>
-    <%= link_to "Back", groups_path, class: "btn btn-secondary btn-sm mr-3" %>
+    <%= link_to "Back", groups_path, class: "btn btn-outline-secondary btn-sm mr-3" %>
   </div>
 </div>

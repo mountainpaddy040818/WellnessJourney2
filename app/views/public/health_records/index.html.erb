@@ -5,7 +5,7 @@
     </div>
     <% @tag_list.each do |list| %>
       <i class="fa-sharp fa-solid fa-tag"></i>
-      <%= link_to list.tag_name,search_tag_path(record_tag_id: list.id) %>
+      <%= link_to list.tag_name,search_tag_path(record_tag_id: list.id), class: "text-dark" %>
       <%= "(#{list.health_records.count})" %>
     <% end %>
   </div>
@@ -46,11 +46,11 @@
               <i class="far fa-clock"></i><%= l health_record.created_at %>
             </td>
             <td>
-              <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-info btn-sm mr-3" %>
+              <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-outline-info btn-sm mr-3" %>
               <% if health_record.user_id == current_user.id %>
                 <%= link_to "Destroy", health_record, method: :delete,
                   data: { confirm: 'Are you sure really?' },
-                  class: "btn btn-danger btn-sm mr-3" %>
+                  class: "btn btn-outline-danger btn-sm mr-3" %>
               <% end %>
             </td>
             <td id="favorite_btn_<%= health_record.id %>">

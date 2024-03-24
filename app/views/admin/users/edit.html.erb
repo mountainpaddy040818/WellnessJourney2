@@ -46,9 +46,9 @@
           <tr>
             <td></td>
             <td>
-              <%= f.submit "Save Changes", class: "btn btn-warning btn-sm mr-3" %>
-              <%= link_to "Destroy", admin_user_path(@user.id), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-danger btn-sm mr-3" %>
-              <%= link_to "Back", admin_users_path, class: "btn btn-secondary btn-sm mr-3" %>
+              <%= f.submit "Save Changes", class: "btn btn-outline-success btn-sm mr-3" %>
+              <%= link_to "Destroy", admin_user_path(@user.id), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-outline-danger btn-sm mr-3" %>
+              <%= link_to "Back", admin_users_path, class: "btn btn-outline-secondary btn-sm mr-3" %>
             </td>
           </tr>
         </tbody>
