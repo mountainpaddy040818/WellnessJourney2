@@ -39,9 +39,10 @@
           <td>
             <i class="far fa-clock"></i><%= l user.created_at %>
           </td>
-          <td>
+          <td id="relationship_<%= user.id %>">
             <% if current_user != user %>
-              <%= render "public/relationships/btn", user: user, options: { class: ""} %>
+              <%#= render "public/relationships/btn", user: user, options: { class: ""} %>
+              <%= render "relationship" , user: user %>
             <% end %>
           </td>
           <td>
