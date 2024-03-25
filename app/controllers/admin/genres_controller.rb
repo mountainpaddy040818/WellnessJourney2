@@ -2,7 +2,7 @@ class Admin::GenresController < ApplicationController
   before_action :set_genre, only: [:edit, :update]
 
   def index
-    @genres = Genre.all
+    @genres = Genre.page(params[:page])
     @genre = Genre.new
   end
 
@@ -44,6 +44,5 @@ class Admin::GenresController < ApplicationController
   def genre_params
     params.require(:genre).permit(:name)
   end
-
 
 end

@@ -2,7 +2,7 @@ class Admin::HealthRecordsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @health_records = HealthRecord.page(params[:page]).per(10)
+    @health_records = HealthRecord.page(params[:page])
   end
 
   def edit

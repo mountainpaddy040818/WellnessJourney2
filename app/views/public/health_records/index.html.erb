@@ -11,57 +11,57 @@
   </div>
 
   <table class="table table-borderless mt-4">
-      <thead>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Posted User</th>
+        <th>Body Parts</th>
+        <th>Exercises</th>
+        <th>Posted Time</th>
+        <th></th>
+        <th></th>
+        <th class="text-right">
+          Comments
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @health_records.each do |health_record| %>
         <tr>
-          <th></th>
-          <th>Posted User</th>
-          <th>Body Parts</th>
-          <th>Exercises</th>
-          <th>Posted Time</th>
-          <th></th>
-          <th></th>
-          <th class="text-right">
-            Comments
-          </th>
+          <td>
+            <%= link_to(health_record.user) do %>
+              <%= image_tag health_record.user.get_profile_image, size:'30x30' %>
+            <% end %>
+          </td>
+          <td>
+            <%= health_record.user.name %>
+          </td>
+          <td>
+            <%= health_record.genre.name %>
+          </td>
+          <td>
+            <%= health_record.exercise %>
+          </td>
+          <td>
+            <i class="far fa-clock"></i><%= l health_record.created_at %>
+          </td>
+          <td>
+            <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-outline-info btn-sm mr-3" %>
+            <% if health_record.user_id == current_user.id %>
+              <%= link_to "Destroy", health_record, method: :delete,
+                data: { confirm: 'Are you sure really?' },
+                class: "btn btn-outline-danger btn-sm mr-3" %>
+            <% end %>
+          </td>
+          <td id="favorite_btn_<%= health_record.id %>">
+            <%= render "public/favorites/btn", health_record: health_record %>
+          </td>
+          <td class="text-center">
+            <%= health_record.health_record_comments.count %>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        <% @health_records.each do |health_record| %>
-          <tr>
-            <td>
-              <%= link_to(health_record.user) do %>
-                <%= image_tag health_record.user.get_profile_image, size:'30x30' %>
-              <% end %>
-            </td>
-            <td>
-              <%= health_record.user.name %>
-            </td>
-            <td>
-              <%= health_record.genre.name %>
-            </td>
-            <td>
-              <%= health_record.exercise %>
-            </td>
-            <td>
-              <i class="far fa-clock"></i><%= l health_record.created_at %>
-            </td>
-            <td>
-              <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-outline-info btn-sm mr-3" %>
-              <% if health_record.user_id == current_user.id %>
-                <%= link_to "Destroy", health_record, method: :delete,
-                  data: { confirm: 'Are you sure really?' },
-                  class: "btn btn-outline-danger btn-sm mr-3" %>
-              <% end %>
-            </td>
-            <td id="favorite_btn_<%= health_record.id %>">
-              <%= render "public/favorites/btn", health_record: health_record %>
-            </td>
-            <td class="text-center">
-              <%= health_record.health_record_comments.count %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
+      <% end %>
+    </tbody>
   </table>
 </div>
 

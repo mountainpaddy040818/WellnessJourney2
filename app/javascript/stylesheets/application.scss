@@ -30,18 +30,35 @@ footer {
   padding: 16px 24px;
   margin: 16px 0px;
 }
- 
+
 .flash-message.notice {
   background-color: #bcdfff;
   color: #0067C0;
   border: solid 1px #0067C0;
 }
- 
+
 .flash-message.alert {
   background-color: #ffd4d1;
   color: #930403;
   border: solid 1px #930403;
 }
+
+ /* pagenation layouts */
+$pagenation_color: rgb(128,128,128);
+
+ .page-item.active .page-link {
+   background-color: $pagenation_color;
+   border-color: $pagenation_color;
+ }
+ .a page-link {
+   color: $pagenation_color;
+ }
+ .page-item a:hover {
+   color: $pagenation_color;
+ }
+ .page-item a {
+   color: $pagenation_color;
+ }
 
 @media (min-width: 992px) {
 .container.bg-secondary {

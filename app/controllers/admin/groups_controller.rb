@@ -1,7 +1,7 @@
 class Admin::GroupsController < ApplicationController
   before_action :authenticate_admin!
   def index
-    @groups = Group.page(params[:page]).per(10)
+    @groups = Group.page(params[:page])
   end
 
   def destroy

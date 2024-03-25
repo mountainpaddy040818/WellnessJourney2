@@ -2,7 +2,7 @@ class Admin::RecordTagsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @record_tags = RecordTag.page(params[:page]).per(10)
+    @record_tags = RecordTag.page(params[:page])
     @users = User.all
   end
 

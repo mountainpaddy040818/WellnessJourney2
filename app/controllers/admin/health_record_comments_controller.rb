@@ -2,8 +2,7 @@ class Admin::HealthRecordCommentsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @health_record_comments = HealthRecordComment.page(params[:page]).per(10)
-    @users = User.page(params[:page]).per(10)
+    @health_record_comments = HealthRecordComment.page(params[:page])
   end
 
   def destroy
