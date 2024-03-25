@@ -21,11 +21,11 @@
             <td>
               <%= user.introduction %>
             </td>
-            <td>
-              <% if current_user != user %>
-                <%= render "public/relationships/btn", user: user, options: { class: ""} %>
-              <% end %>
-            </td>
+            <!--<td id="public_users_relationship_<%#= user.id %>">-->
+            <!--  <%# if current_user != user %>-->
+            <!--    <%#= render "public/users/relationship", user: user %>-->
+            <!--  <%# end %>-->
+            <!--</td>-->
           </tr>
         </tbody>
       <% end %>
