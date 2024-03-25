@@ -20,8 +20,10 @@ class Public::GroupsController < ApplicationController
     @group.owner_id = current_user.id
     @group.users << current_user
     if @group.save
+      flash[:notice] = "You have successfully created a group."
       redirect_to groups_path, method: :post
     else
+      flash.now[:alert] = "You cannot create a group due to blank fields."
       render 'new'
     end
   end
@@ -32,8 +34,10 @@ class Public::GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
+      flash[:notice] = "You have successfully updated the group."
       redirect_to groups_path
     else
+      flash.now[:alert] = "You have failed to update the group."
       render "edit"
     end
   end
@@ -59,6 +63,7 @@ class Public::GroupsController < ApplicationController
   def ensure_correct_user
     @group = Group.find(params[:id])
     unless @group.owner_id == current_user.id
+      flash.now[:alert] = "You are not the owner of the group, so you cannot edit it."
       redirect_to groups_path
     end
   end

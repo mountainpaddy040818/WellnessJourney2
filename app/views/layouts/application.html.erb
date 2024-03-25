@@ -16,12 +16,11 @@
         <%= render "layouts/header" %>
       </header>
       <main>
-        <h4 class="text-info">
-          <div class="text-center mt-2">
-            <%= flash[:notice] %>
-            <%= flash[:error] %>
-          </div>
-        </h4>
+        <div class="text-center mt-2">
+          <% flash.each do |message_type, message| %>
+            <div class="flash-message <%= message_type %>"><%= message %></div>
+          <% end %>
+        </div>
         <%= yield %>
       </main>
       <footer>

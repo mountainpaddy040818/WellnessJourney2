@@ -12,7 +12,8 @@ class Admin::HealthRecordsController < ApplicationController
   def destroy
     @health_record = HealthRecord.find(params[:id])
     @health_record.destroy
-    redirect_to admin_health_records_path, notice: "You have destroyed a record successfully."
+    flash[:notice] = "You have successfully deleted the record."
+    redirect_to admin_health_records_path
   end
 
   private

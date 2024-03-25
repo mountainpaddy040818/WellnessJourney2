@@ -12,8 +12,10 @@ class Admin::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to edit_admin_user_path(@user), notice: "You have updated user's detail successfully."
+      flash[:notice] = "You have successfully updated the user information."
+      redirect_to edit_admin_user_path(@user)
     else
+      flash.now[:alert] = "You have failed to update the user information."
       render :edit
     end
   end
@@ -21,7 +23,8 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to admin_users_path, notice: "You have destroyed an user successfully."
+    flash[:notice] = "You have successfully deleted the user."
+    redirect_to admin_users_path
   end
 
   private

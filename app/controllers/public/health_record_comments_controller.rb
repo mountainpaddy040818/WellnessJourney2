@@ -8,15 +8,14 @@ class Public::HealthRecordCommentsController < ApplicationController
     @health_record_comment = current_user.health_record_comments.new(health_record_comment_params)
     @health_record_comment.health_record_id = @health_record.id
     @health_record_comment.save
+    flash[:notice] = "You have successfully commented."
   end
 
   def destroy
     health_record_comment = HealthRecordComment.find_by(health_record_id: params[:health_record_id], id: params[:id])
     if health_record_comment.user_id == current_user.id
       health_record_comment.destroy
-      flash[:notice] = "You have destroyed comments."
-    else
-      flash[:error] = "You cannot destroy comments."
+      flash[:notice] = "You have successfully deleted the comment."
     end
   end
 

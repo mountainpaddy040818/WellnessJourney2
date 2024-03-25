@@ -20,10 +20,11 @@ class Public::HealthRecordsController < ApplicationController
       @genre.save
       @health_record.save_record_tags(tag_list)
       # 内容を保存する
-      redirect_to health_record_path(@health_record), notice: "You have created records successfully."
+      flash[:notice] = "You have successfully recorded."
+      redirect_to health_record_path(@health_record)
     else
       # できなければnewページに戻る
-      flash[:error] = "some errors prohibited this obj from being saved."
+      flash.now[:alert] = "You cannot record due to blank fields."
       render :new
     end
   end
@@ -47,7 +48,6 @@ class Public::HealthRecordsController < ApplicationController
     @health_record = HealthRecord.find(params[:id])
     @genre = Genre.find(params[:id])
     @tag_list = @health_record.record_tags.pluck(:tag_name).join(',')
-    # @genre = Genre.find(params[:id])
   end
 
   def update
@@ -58,10 +58,11 @@ class Public::HealthRecordsController < ApplicationController
       @genre.save
       @health_record.save_record_tags(tag_list)
       # 変更内容を適用
-      redirect_to health_record_path(@health_record), notice: "You have updated records successfully."
+      flash[:notice] = "You have successfully updated the record."
+      redirect_to health_record_path(@health_record)
     else
       # できなければeditページに戻る
-      flash[:error] = "some errors prohibited this obj from being saved."
+      flash.now[:alert] = "You have failed to update the record."
       render :edit
     end
   end
@@ -70,7 +71,7 @@ class Public::HealthRecordsController < ApplicationController
     @health_record = HealthRecord.find(params[:id])
     @health_record.destroy
     # レコードを削除
-    redirect_to health_records_path, notice: "You have destoryed records successfully."
+    redirect_to health_records_path, notice: "You have successfully deleted the record."
   end
 
   def search_tag

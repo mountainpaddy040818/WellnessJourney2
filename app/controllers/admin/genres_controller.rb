@@ -9,17 +9,21 @@ class Admin::GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to admin_genres_path, notice: "You have created genres successfully."
+      flash[:notice] = "You have successfully registered the genre."
+      redirect_to admin_genres_path
     else
       @genres = Genre.all
+      flash.now[:alert] = "You have failed to register the genre."
       render :index
     end
   end
 
   def update
     if @genre.update(genre_params)
-      redirect_to admin_genres_path, notice: "You have updated genre detail sucessfully."
+      flash[:notice] = "You have successfully updated the genre."
+      redirect_to admin_genres_path
     else
+      flash.now[:alert] = "You have failed to update the genre."
       render :edit
     end
   end
@@ -27,7 +31,8 @@ class Admin::GenresController < ApplicationController
   def destroy
     @genre = Genre.find(params[:id])
     @genre.destroy
-    redirect_to admin_genres_path, notice: "You have destroyed a genre sucessfully."
+    flash[:notice] = "You have successfully deleted the genre."
+    redirect_to admin_genres_path
   end
 
   private

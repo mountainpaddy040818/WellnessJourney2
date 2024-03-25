@@ -9,6 +9,7 @@ class Admin::HealthRecordCommentsController < ApplicationController
   def destroy
     @health_record_comment = HealthRecordComment.find(params[:id])
     @health_record_comment.destroy
+    flash[:notice] = "You have successfully deleted the comment."
     redirect_to admin_health_record_comments_path, notice: "You have destroyed a comment successfully."
   end
 

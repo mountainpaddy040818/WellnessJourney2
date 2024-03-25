@@ -27,7 +27,7 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     # ユーザー情報の変更に成功したら指定のメッセージを表示
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: "You have updated user's detail successfully."
+      redirect_to user_path(@user), notice: "You have successfully updated the user information."
     else
       render :edit
     end
