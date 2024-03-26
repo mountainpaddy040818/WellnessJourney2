@@ -46,7 +46,14 @@
           <!--</td>-->
           <td>
             <% if user.id == current_user.id %>
-              <%= link_to "My page", user_path(user.id), class: "btn btn-outline-danger" %>
+              <%= link_to "My page", user_path(user.id), class: "btn btn-outline-danger btn-sm" %>
+            <% else %>
+              <p></p>
+            <% end %>
+          </td>
+          <td>
+            <% if user.id == current_user.id %>
+              <p></p>
             <% else %>
               <%= link_to "Detail", user_path(user.id), class: "btn btn-outline-info btn-sm" %>
             <% end %>
