@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @users = User.page(params[:page])
+    @users = User.order(created_at: :desc).page(params[:page].to_i)
   end
 
   def edit

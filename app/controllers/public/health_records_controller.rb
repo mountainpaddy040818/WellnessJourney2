@@ -31,7 +31,7 @@ class Public::HealthRecordsController < ApplicationController
 
   def index
     # レコード情報を全て取得
-    @health_records = HealthRecord.page(params[:page])
+    @health_records = HealthRecord.order(created_at: :desc).page(params[:page].to_i)
     @genres = Genre.all
     @tag_list = RecordTag.all
   end

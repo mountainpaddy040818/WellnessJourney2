@@ -1,7 +1,7 @@
 class Admin::GroupsController < ApplicationController
   before_action :authenticate_admin!
   def index
-    @groups = Group.page(params[:page])
+    @groups = Group.order(created_at: :desc).page(params[:page].to_i)
   end
 
   def destroy

@@ -10,7 +10,7 @@ class Public::UsersController < ApplicationController
 
   def index
     # 登録済みユーザーの情報を全て取得
-    @users = User.page(params[:page])
+    @users = User.order(created_at: :desc).page(params[:page].to_i)
   end
 
   def show

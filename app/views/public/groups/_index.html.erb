@@ -38,7 +38,11 @@
         </td>
 
         <td>
-          <%= link_to "Detail", group_path(group.id), class: "btn btn-outline-info btn-sm mr-3" %>
+          <% if group.owner_id == current_user.id %>
+            <%= link_to "Detail", group_path(group.id), class: "btn btn-outline-warning btn-sm mr-3" %>
+          <% else %>  
+            <%= link_to "Detail", group_path(group.id), class: "btn btn-outline-info btn-sm mr-3" %>
+          <% end %>
           <% if group.is_owned_by?(current_user) %>
             <%= link_to 'Edit', edit_group_path(group), class: "group_#{group.id} btn btn-sm btn-outline-success" %>
           <% end %>

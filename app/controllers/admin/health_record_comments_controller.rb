@@ -2,7 +2,7 @@ class Admin::HealthRecordCommentsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @health_record_comments = HealthRecordComment.page(params[:page])
+    @health_record_comments = HealthRecordComment.order(created_at: :desc).page(params[:page].to_i)
   end
 
   def destroy

@@ -46,7 +46,11 @@
             <i class="far fa-clock"></i><%= l health_record.created_at %>
           </td>
           <td>
-            <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-outline-info btn-sm mr-3" %>
+            <% if health_record.user_id == current_user.id %>
+              <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-outline-warning btn-sm mr-3" %>
+            <% else %>  
+              <%= link_to "Detail", health_record_path(health_record.id), class: "btn btn-outline-info btn-sm mr-3" %>
+            <% end %>
             <% if health_record.user_id == current_user.id %>
               <%= link_to "Destroy", health_record, method: :delete,
                 data: { confirm: 'Are you sure really?' },

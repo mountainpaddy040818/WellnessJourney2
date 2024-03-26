@@ -45,7 +45,11 @@
           <!--  <%# end %>-->
           <!--</td>-->
           <td>
-            <%= link_to "Detail", user_path(user.id), class: "btn btn-outline-info btn-sm" %>
+            <% if user.id == current_user.id %>
+              <%= link_to "Detail", user_path(user.id), class: "btn btn-outline-warning btn-sm" %>
+            <% else %>
+              <%= link_to "Detail", user_path(user.id), class: "btn btn-outline-info btn-sm" %>
+            <% end %>
           </td>
         </tr>
       <% end %>

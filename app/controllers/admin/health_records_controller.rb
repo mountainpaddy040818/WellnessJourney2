@@ -2,7 +2,7 @@ class Admin::HealthRecordsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @health_records = HealthRecord.page(params[:page])
+    @health_records = HealthRecord.order(created_at: :desc).page(params[:page].to_i)
   end
 
   def edit
