@@ -1,7 +1,11 @@
 <div class="container mt-5">
   <div class="col-md-12 mx-auto">
     <div class="row col-lg-8 justify-content-left">
-      <h2><strong>User Details</strong></h2>
+      <% if @user.id == current_user.id %>
+        <h2><strong>My page</strong></h2>
+      <% else %>
+        <h2><strong>User Details</strong></h2>
+      <% end %>
     </div>
   </div>
 
