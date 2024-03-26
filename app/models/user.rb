@@ -24,12 +24,12 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users, dependent: :destroy
   has_many :owned_groups, class_name: "Group"
 
-  validates :name, length: { maximum: 50 }
-  validates :introduction, length: { maximum: 50 }
-  validates :target, length: { maximum: 50 }
+  validates :name, length: {maximum: 50}
+  validates :introduction, length: {maximum: 50}
+  validates :target, length: {maximum: 50}
 
   def get_profile_image
-    (profile_image.attached?) ? profile_image : 'no_image.jpg'
+    (profile_image.attached?) ? profile_image : "no_image.jpg"
   end
 
   # フォロー実行
@@ -47,7 +47,6 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
-  # 検索方法分岐
   def self.looks(search, word)
     if search == "perfect_match"
       @user = User.where("name LIKE?", "#{word}")

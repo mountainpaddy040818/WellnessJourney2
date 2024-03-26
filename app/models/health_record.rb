@@ -9,7 +9,6 @@ class HealthRecord < ApplicationRecord
 
   belongs_to :genre
 
- # validates :part, presence:true, length: { maximum: 20 }
   validates :exercise, presence:true, length: { maximum: 50 }
   validates :training_content, presence:true, length: { maximum: 50 }
   validates :diet_content, presence:true, length: { maximum: 50 }
@@ -20,7 +19,6 @@ class HealthRecord < ApplicationRecord
     favorites.exists?(user_id: user.id)
   end
 
-  # 検索方法分岐
   def self.looks(search, word)
     if search == "perfect_match"
       @health_records = HealthRecord.joins(:genre).where("genres.name LIKE ?", "%#{word}%")
@@ -36,19 +34,14 @@ class HealthRecord < ApplicationRecord
   end
 
   def save_record_tags(tags)
-    # タグが存在していれば、タグの名前を配列として全て取得
     current_tags = self.record_tags.pluck(:tag_name) unless self.record_tags.nil?
-    # 現在取得したタグから送られてきたタグを除いてoldtagとする
     old_tags = current_tags - tags
-    # 送信されてきたタグから現在存在するタグを除いたタグをnewとする
     new_tags = tags - current_tags
 
-    # 古いタグを消す
     old_tags.each do |old_name|
       self.record_tags.delete RecordTag.find_by(tag_name: old_name)
     end
 
-    # 新しいタグを保存
     new_tags.each do |new_name|
       record_tag = RecordTag.find_or_create_by(tag_name: new_name)
       self.record_tags << record_tag

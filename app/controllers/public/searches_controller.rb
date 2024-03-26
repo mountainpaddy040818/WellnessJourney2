@@ -3,7 +3,7 @@ class Public::SearchesController < ApplicationController
   
   def search
     @range = params[:range]
-    if @range == 'User'
+    if @range == "User"
       @users = User.looks(params[:search], params[:word])
     else
       @health_records = HealthRecord.looks(params[:search], params[:word])

@@ -25,17 +25,16 @@ class Public::HealthRecordCommentsController < ApplicationController
   end
 
   private
-
-  def health_record_comment_params
-    params.require(:health_record_comment).permit(:comment)
-  end
-
-  def ensure_correct_user
-    @health_record_comment = HealthRecordComment.find(params[:id])
-    unless @health_record_comment.user_id == current_user.id
-      flash.now[:alert] = "You cannot edit the comment because you are not the creator."
-      redirect_to health_record_path(@health_record)
+    def health_record_comment_params
+      params.require(:health_record_comment).permit(:comment)
     end
-  end
+
+    def ensure_correct_user
+      @health_record_comment = HealthRecordComment.find(params[:id])
+      unless @health_record_comment.user_id == current_user.id
+        flash.now[:alert] = "You cannot edit the comment because you are not the creator."
+        redirect_to health_record_path(@health_record)
+      end
+    end
 
 end

@@ -11,7 +11,7 @@ class Public::HealthRecordsController < ApplicationController
     @health_record.user_id = current_user.id
     @genre = Genre.find(params[:health_record][:genre_id])
     @health_record.genre_id = @genre.id
-    tag_list = params[:health_record][:tag_name].split(',')
+    tag_list = params[:health_record][:tag_name].split(",")
 
     if @health_record.save
       @genre.save
@@ -33,20 +33,20 @@ class Public::HealthRecordsController < ApplicationController
   def show
     @health_record = HealthRecord.find(params[:id])
     @health_record_comment = HealthRecordComment.new
-    @tag_list = @health_record.record_tags.pluck(:tag_name).join(',')
+    @tag_list = @health_record.record_tags.pluck(:tag_name).join(",")
     @health_record_tags = @health_record.record_tags
   end
 
   def edit
     @health_record = HealthRecord.find(params[:id])
     @genre = Genre.find(params[:id])
-    @tag_list = @health_record.record_tags.pluck(:tag_name).join(',')
+    @tag_list = @health_record.record_tags.pluck(:tag_name).join(",")
   end
 
   def update
     @health_record = HealthRecord.find(params[:id])
     @genre = Genre.find(params[:id])
-    tag_list = params[:health_record][:tag_name].split(',')
+    tag_list = params[:health_record][:tag_name].split(",")
     if @health_record.update(health_record_params)
       @genre.save
       @health_record.save_record_tags(tag_list)
@@ -72,17 +72,16 @@ class Public::HealthRecordsController < ApplicationController
   end
 
   private
-
-  def health_record_params
-    params.require(:health_record).permit(:genre_id, :name, :exercise,
-      :training_content, :diet_content, :today_impression, :comment, :tag_name)
-  end
-
-  def ensure_correct_user
-    @health_record = HealthRecord.find(params[:id])
-    unless @health_record.user_id == current_user.id
-      flash.now[:alert] = "You cannot edit the comment because you are not the author."
-      redirect_to health_records_path
+    def health_record_params
+      params.require(:health_record).permit(:genre_id, :name, :exercise,
+        :training_content, :diet_content, :today_impression, :comment, :tag_name)
     end
-  end
+
+    def ensure_correct_user
+      @health_record = HealthRecord.find(params[:id])
+      unless @health_record.user_id == current_user.id
+        flash.now[:alert] = "You cannot edit the comment because you are not the author."
+        redirect_to health_records_path
+      end
+    end
 end

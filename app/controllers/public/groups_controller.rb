@@ -24,7 +24,7 @@ class Public::GroupsController < ApplicationController
       redirect_to groups_path, method: :post
     else
       flash.now[:alert] = "You cannot create a group due to blank fields."
-      render 'new'
+      render "new"
     end
   end
 
@@ -55,17 +55,16 @@ class Public::GroupsController < ApplicationController
   end
 
   private
-
-  def group_params
-    params.require(:group).permit(:name, :introduction, :group_image)
-  end
-
-  def ensure_correct_user
-    @group = Group.find(params[:id])
-    unless @group.owner_id == current_user.id
-      flash.now[:alert] = "You are not the owner of the group, so you cannot edit it."
-      redirect_to groups_path
+    def group_params
+      params.require(:group).permit(:name, :introduction, :group_image)
     end
-  end
+
+    def ensure_correct_user
+      @group = Group.find(params[:id])
+      unless @group.owner_id == current_user.id
+        flash.now[:alert] = "You are not the owner of the group, so you cannot edit it."
+        redirect_to groups_path
+      end
+    end
   
 end

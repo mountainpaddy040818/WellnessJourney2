@@ -42,28 +42,27 @@ class Public::UsersController < ApplicationController
   end
 
   private
-
-  def user_params
-    params.require(:user).permit(:name, :profile_image, :introduction, :target)
-  end
-
-  def ensure_guest_user
-    @user = User.find(params[:id])
-    if @user.guest_user?
-      redirect_to user_path(current_user)
-      flash[:notice] = "Guest users are unable to navigate to the profile editing page."
+    def user_params
+      params.require(:user).permit(:name, :profile_image, :introduction, :target)
     end
-  end
 
-  def ensure_correct_user
-    @user = User.find(params[:id])
-    unless @user.id == current_user.id
-      redirect_to user_path(current_user)
+    def ensure_guest_user
+      @user = User.find(params[:id])
+      if @user.guest_user?
+        redirect_to user_path(current_user)
+        flash[:notice] = "Guest users are unable to navigate to the profile editing page."
+      end
     end
-  end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
+    def ensure_correct_user
+      @user = User.find(params[:id])
+      unless @user.id == current_user.id
+        redirect_to user_path(current_user)
+      end
+    end
+
+    def set_user
+      @user = User.find(params[:id])
+    end
 
 end

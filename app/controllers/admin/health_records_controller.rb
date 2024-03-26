@@ -17,9 +17,8 @@ class Admin::HealthRecordsController < ApplicationController
   end
 
   private
-
-  def health_record_params
-    params.require(:health_record).permit(:name, :genre_id, :exercise, :training_content, :diet_content, :today_impression)
-  end
+    def health_record_params
+      params.require(:health_record).permit(:name, :genre_id, :exercise, :training_content, :diet_content, :today_impression)
+    end
 
 end
