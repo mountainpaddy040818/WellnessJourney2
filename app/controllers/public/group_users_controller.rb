@@ -12,4 +12,5 @@ class Public::GroupUsersController < ApplicationController
     group_user.destroy
     redirect_to request.referer
   end
+  
 end

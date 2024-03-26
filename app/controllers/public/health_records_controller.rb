@@ -1,11 +1,8 @@
 class Public::HealthRecordsController < ApplicationController
-  # ログイン済みのユーザーか？
   before_action :authenticate_user!
-  # url直接入力を防ぐ
   before_action :ensure_correct_user, only: [:edit, :destroy, :update]
 
   def new
-    # 新規作成
     @health_record = HealthRecord.new
   end
 
@@ -19,25 +16,21 @@ class Public::HealthRecordsController < ApplicationController
     if @health_record.save
       @genre.save
       @health_record.save_record_tags(tag_list)
-      # 内容を保存する
       flash[:notice] = "You have successfully recorded."
       redirect_to health_record_path(@health_record)
     else
-      # できなければnewページに戻る
       flash.now[:alert] = "You cannot record due to blank fields."
       render :new
     end
   end
 
   def index
-    # レコード情報を全て取得
     @health_records = HealthRecord.order(created_at: :desc).page(params[:page].to_i)
     @genres = Genre.all
     @tag_list = RecordTag.all
   end
 
   def show
-    # レコード内容を1件ずつ表示
     @health_record = HealthRecord.find(params[:id])
     @health_record_comment = HealthRecordComment.new
     @tag_list = @health_record.record_tags.pluck(:tag_name).join(',')
@@ -57,11 +50,9 @@ class Public::HealthRecordsController < ApplicationController
     if @health_record.update(health_record_params)
       @genre.save
       @health_record.save_record_tags(tag_list)
-      # 変更内容を適用
       flash[:notice] = "You have successfully updated the record."
       redirect_to health_record_path(@health_record)
     else
-      # できなければeditページに戻る
       flash.now[:alert] = "You have failed to update the record."
       render :edit
     end
@@ -70,28 +61,27 @@ class Public::HealthRecordsController < ApplicationController
   def destroy
     @health_record = HealthRecord.find(params[:id])
     @health_record.destroy
-    # レコードを削除
-    redirect_to health_records_path, notice: "You have successfully deleted the record."
+    flash[:notice] = "You have successfully deleted the record."
+    redirect_to health_records_path
   end
 
   def search_tag
-    #検索結果画面でもタグ一覧表示
     @tag_list = RecordTag.all
-    #検索されたタグを受け取る
     @tag = RecordTag.find(params[:record_tag_id])
-    #検索されたタグに紐づく投稿を表示
     @health_records = @tag.health_records
   end
 
   private
 
   def health_record_params
-    params.require(:health_record).permit(:genre_id, :name, :part, :exercise, :training_content, :diet_content, :today_impression, :comment, :tag_name)
+    params.require(:health_record).permit(:genre_id, :name, :exercise,
+      :training_content, :diet_content, :today_impression, :comment, :tag_name)
   end
 
   def ensure_correct_user
     @health_record = HealthRecord.find(params[:id])
     unless @health_record.user_id == current_user.id
+      flash.now[:alert] = "You cannot edit the comment because you are not the author."
       redirect_to health_records_path
     end
   end

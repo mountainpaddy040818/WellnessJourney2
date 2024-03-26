@@ -29,7 +29,7 @@ class Public::SessionsController < Devise::SessionsController
   def guest_sign_in
     user = User.guest
     sign_in user
-    flash[:notice] = "I'm logged in as a Guest User."
+    flash[:notice] = "You are logged in as a Guest User."
     redirect_to user_path(user)
   end
 

@@ -7,8 +7,11 @@ class Public::HealthRecordCommentsController < ApplicationController
     @health_record = HealthRecord.find(params[:health_record_id])
     @health_record_comment = current_user.health_record_comments.new(health_record_comment_params)
     @health_record_comment.health_record_id = @health_record.id
-    @health_record_comment.save
-    flash[:notice] = "You have successfully commented."
+    if @health_record_comment.save
+      flash[:notice] = "You have successfully commented."
+    else
+      flash.now[:alert] = "You have failed to comment."
+    end 
   end
 
   def destroy
@@ -16,6 +19,8 @@ class Public::HealthRecordCommentsController < ApplicationController
     if health_record_comment.user_id == current_user.id
       health_record_comment.destroy
       flash[:notice] = "You have successfully deleted the comment."
+    else 
+      flash.now[:alert] = "You failed to delete the comment."
     end
   end
 
@@ -28,6 +33,7 @@ class Public::HealthRecordCommentsController < ApplicationController
   def ensure_correct_user
     @health_record_comment = HealthRecordComment.find(params[:id])
     unless @health_record_comment.user_id == current_user.id
+      flash.now[:alert] = "You cannot edit the comment because you are not the creator."
       redirect_to health_record_path(@health_record)
     end
   end
