@@ -11,7 +11,7 @@ class Public::HealthRecordCommentsController < ApplicationController
       flash[:notice] = "You have successfully commented."
     else
       flash.now[:alert] = "You have failed to comment."
-    end 
+    end
   end
 
   def destroy
@@ -19,7 +19,7 @@ class Public::HealthRecordCommentsController < ApplicationController
     if health_record_comment.user_id == current_user.id
       health_record_comment.destroy
       flash[:notice] = "You have successfully deleted the comment."
-    else 
+    else
       flash.now[:alert] = "You failed to delete the comment."
     end
   end

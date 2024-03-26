@@ -19,7 +19,8 @@ class Public::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: "You have successfully updated the user information."
+      flash[:notice] = "You have successfully updated the user information."
+      redirect_to user_path(@user)
     else
       render :edit
     end
@@ -50,7 +51,7 @@ class Public::UsersController < ApplicationController
       @user = User.find(params[:id])
       if @user.guest_user?
         redirect_to user_path(current_user)
-        flash[:notice] = "Guest users are unable to navigate to the profile editing page."
+        flash[:alert] = "Guest users are unable to navigate to the profile editing page."
       end
     end
 
