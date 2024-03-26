@@ -8,6 +8,6 @@ class Admin::GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @group.destroy
     flash[:notice] = "You have successfully deleted the group."
-    redirect_to admin_groups_path, notice: "You have destroyed a group successfully."
+    redirect_to admin_groups_path
   end
 end
