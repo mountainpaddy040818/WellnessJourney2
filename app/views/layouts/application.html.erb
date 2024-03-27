@@ -18,7 +18,9 @@
       <main>
         <div class="text-center mt-2">
           <% flash.each do |message_type, message| %>
-            <div class="flash-message <%= message_type %>"><%= message %></div>
+            <div class="flash-message <%= message_type %>"><%= message %>
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
           <% end %>
         </div>
         <%= yield %>

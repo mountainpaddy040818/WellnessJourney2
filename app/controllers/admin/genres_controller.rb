@@ -2,8 +2,8 @@ class Admin::GenresController < ApplicationController
   before_action :set_genre, only: [:edit, :update]
 
   def index
-    @genres = Genre.order(created_at: :desc).page(params[:page].to_i)
     @genre = Genre.new
+    @genres = Genre.order(created_at: :desc).page(params[:page].to_i)
   end
 
   def create
@@ -27,7 +27,7 @@ class Admin::GenresController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @genre = Genre.find(params[:id])
     @genre.destroy
@@ -43,5 +43,5 @@ class Admin::GenresController < ApplicationController
     def genre_params
       params.require(:genre).permit(:name)
     end
-    
+
 end

@@ -44,6 +44,11 @@ class Public::GroupsController < ApplicationController
 
   def new_mail
     @group = Group.find(params[:group_id])
+    # if @group.save
+    #   flash[:notice] = ""
+    # else
+    #   flash.now[:alert] = ""
+    # end
   end
 
   def send_mail

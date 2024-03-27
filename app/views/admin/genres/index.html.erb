@@ -1,3 +1,13 @@
+<div class="mt-2 text-danger">
+  <% if @genre.errors.any? %>
+    <ul>
+      <% @genre.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <div class="container mt-5">
   <div class="col-md-12 mx-auto">
     <div class="row col-lg-8 justify-content-left">
@@ -41,6 +51,6 @@
   </div>
 </div>
 
-<div class="d-flex justify-content-center mt-5">
-  <%= paginate @genres, theme: 'twitter-bootstrap-4' %>
-</div>
+<!--<div class="d-flex justify-content-center mt-5">-->
+<!--  <%#= paginate @genres, theme: 'twitter-bootstrap-4' %>-->
+<!--</div>-->

@@ -25,7 +25,7 @@
               <%= group.introduction %>
             </td>
             <td>
-              <i class="far fa-clock"></i><%= l group.created_at %>
+              <i class="far fa-clock"></i><%= group.created_at.strftime("%a %Y.%m.%d %H:%M") %>
             </td>
             <td>
               <%= link_to "Destroy", admin_group_path(group.id), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-outline-danger btn-sm" %>

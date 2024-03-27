@@ -39,7 +39,7 @@
 
         <tr>
           <td>Created Day</td>
-          <td><i class="far fa-clock"></i><%= l @group.created_at %></td>
+          <td><i class="far fa-clock"></i><%= @group.created_at.strftime("%a %Y.%m.%d %H:%M") %></td>
         </tr>
 
         <tr>
