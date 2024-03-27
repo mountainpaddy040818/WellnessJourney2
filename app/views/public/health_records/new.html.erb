@@ -1,3 +1,13 @@
+<div class="mt-2 text-danger">
+  <% if @health_record.errors.any? %>
+    <ul>
+      <% @health_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <div class="container mt-5">
   <div class="col-md-12 mx-auto">
     <div class="row col-lg-8 justify-content-left">

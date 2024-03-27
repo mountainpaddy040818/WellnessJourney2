@@ -1,9 +1,12 @@
 <%= form_with model: @user, url: user_registration_path do |f| %>
+  <div class="col-12 text-danger mt-3">
+    <%= render "public/shared/error_messages", resource: resource %>
+  </div>
+
   <div class="container mt-4 mb-5">
     <div class="row">
       <div class="col-lg-3 offset-lg-1 col-md-4 offset-md-4 col-6 offset-3 text-center">
         <h2>Sign up</h2>
-        <%= render "public/shared/error_messages", resource: resource %>
       </div>
     </div>
   </div>
@@ -57,7 +60,7 @@
     </div>
 
     <div class="row">
-      <div class="actions col-lg-7 offset-lg-5 mt-3">
+      <div class="actions col-lg-7 offset-lg-5 mt-3 mb-3">
         <%= f.submit "Sign up", class: "btn btn-outline-success btn-lg" %>
       </div>
     </div>
