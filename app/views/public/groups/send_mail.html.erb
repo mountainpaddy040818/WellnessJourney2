@@ -1,12 +1,12 @@
-<div class="container d-flex flex-column align-items-center text-left mt-5 mb-5">
+<div class="container d-flex flex-column align-items-center text-left mt-3 mb-3">
   <div>
-    <h3 class="mb-3 mt-4">You have sended a mail successfully.</h3>
-    <p class="mb-4">The content is as follows</p>
-    <div>
-      [Title]<p class="font-weight-bold"> <%= @mail_title %></p>
+    <h3 class="mb-3 mt-3">You have sended a mail successfully.</h3>
+    <p class="mb-3">The content is as follows</p>
+    <div class="mb-4">
+      [Title]<p class="font-weight-bold mt-2"><%= @mail_title %></p>
     </div>
-    <div>
-      [Opinion]<p class="font-weight-bold"> <%= safe_join(@mail_content.split("\n"),tag(:br)) %></p>
+    <div class="mb-4">
+      [Opinion]<p class="font-weight-bold mt-2"><%= safe_join(@mail_content.split("\n"),tag(:br)) %></p>
     </div>
   </div>
 </div>
