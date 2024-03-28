@@ -30,10 +30,6 @@
 ​
 ## 設計書
 
-#### [制作スケジュール表](https://docs.google.com/spreadsheets/d/1W9hfPrPYVyB8MAeNCb9lHVdVdqceW2ibfjWdJNvKiFY/edit#gid=1773513600)
-
-#### [テスト仕様書](https://docs.google.com/spreadsheets/d/12Iw9rOFP7EsFf0y7AB7_7drcZCtqMW6Z/edit#gid=1511467858)
-
 #### ER図<br>
 ![スクリーンショット 2024-03-28 23 44 29](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/ab92058c-c043-41ea-bd04-c57b019d4f9f)
 
@@ -71,6 +67,17 @@
 
 ##### admins<br>
 ![スクリーンショット 2024-03-28 23 57 16](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/eb69ebea-9811-4cf5-ba3e-c9a745843d3a)
+
+#### テスト仕様書
+<br><br>
+##### ユーザー<br>
+![スクリーンショット 2024-03-29 0 21 34](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/9bc18553-7a79-4812-9a59-adaa94df4740)
+
+![スクリーンショット 2024-03-29 0 21 55](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/f85636f6-d458-444a-bd20-0811f55ad5ff)
+
+##### 管理者<br>
+![スクリーンショット 2024-03-29 0 22 03](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/aaffad5d-fb44-4334-8b3a-45d4278b462f)
+
 
 ## 開発環境
 - OS：Linux(CentOS)
