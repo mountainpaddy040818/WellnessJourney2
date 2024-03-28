@@ -34,10 +34,9 @@
 
 #### [テスト仕様書](https://docs.google.com/spreadsheets/d/12Iw9rOFP7EsFf0y7AB7_7drcZCtqMW6Z/edit#gid=1511467858)
 
-#### [ER図](https://app.diagrams.net/#G1fmuCPf8_vUmVRQGmOqpEkEByg1_xy_xz#%7B%22pageId%22%3A%22T22SGYjDBbAf4KW2gtLK%22%7D)
+#### ![ER図](./images/ER.png)
 
-#### [テーブル定義書](https://docs.google.com/spreadsheets/d/1ssEIqT_9k1dITqUFnzyeUxI8VfsYqUMh/edit?copiedFromTrash#gid=1578921208)
-
+#### ![テーブル定義](./images/table_list.png)
 ​
 ## 開発環境
 - OS：Linux(CentOS)
