@@ -34,7 +34,7 @@
 ![スクリーンショット 2024-03-28 23 44 29](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/ab92058c-c043-41ea-bd04-c57b019d4f9f)
 
 #### テーブル定義書
-<br>
+<br><br>
 ##### users<br>
 ![スクリーンショット 2024-03-29 0 33 16](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/5f798c03-f864-4885-9448-84284094a48d)
 
@@ -69,8 +69,9 @@
 ![スクリーンショット 2024-03-28 23 57 16](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/eb69ebea-9811-4cf5-ba3e-c9a745843d3a)
 
 #### テスト仕様書
-<br>
+<br><br>
 ##### ユーザー<br>
+
 ![スクリーンショット 2024-03-29 0 21 34](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/9bc18553-7a79-4812-9a59-adaa94df4740)
 
 ![スクリーンショット 2024-03-29 0 21 55](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/f85636f6-d458-444a-bd20-0811f55ad5ff)
