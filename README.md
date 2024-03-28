@@ -34,7 +34,8 @@
 
 #### [テスト仕様書](https://docs.google.com/spreadsheets/d/12Iw9rOFP7EsFf0y7AB7_7drcZCtqMW6Z/edit#gid=1511467858)
 
-#### ER図
+#### ER図![スクリーンショット 2024-03-28 18 42 52](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/e8c7db6e-701a-4b0f-b2c7-056870e854e2)
+
 
 #### テーブル定義
 ​
