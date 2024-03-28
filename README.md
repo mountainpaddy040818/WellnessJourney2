@@ -37,7 +37,8 @@
 #### ER図![スクリーンショット 2024-03-28 18 42 52](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/e8c7db6e-701a-4b0f-b2c7-056870e854e2)
 
 
-#### テーブル定義
+#### テーブル定義![スクリーンショット 2024-03-28 18 16 44](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/a27ab0de-d935-4c61-910c-5d44232bf487)
+
 ​
 ## 開発環境
 - OS：Linux(CentOS)
