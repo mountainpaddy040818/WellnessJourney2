@@ -34,9 +34,9 @@
 
 #### [テスト仕様書](https://docs.google.com/spreadsheets/d/12Iw9rOFP7EsFf0y7AB7_7drcZCtqMW6Z/edit#gid=1511467858)
 
-#### ![ER図](./images/ER.png)
+#### ER図
 
-#### ![テーブル定義](./images/table_list.png)
+#### テーブル定義
 ​
 ## 開発環境
 - OS：Linux(CentOS)
