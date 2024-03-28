@@ -27,8 +27,8 @@ class User < ApplicationRecord
   validates :name, length: {maximum: 50}
   validates :introduction, length: {maximum: 50}
   validates :target, length: {maximum: 50}
-  
-  validate :profile_image_type
+
+  validate :profile_image_type, on: :update
 
   def get_profile_image
     (profile_image.attached?) ? profile_image : "no_image.jpg"
@@ -88,14 +88,14 @@ class User < ApplicationRecord
   def active_for_authentication?
     super && (is_active == true)
   end
-  
+
   private
 
   # 画像投稿時のバリデーション
   def profile_image_type
     if profile_image.attached? == false
       errors.add(:profile_image, 'を選択してください')
-    elsif !profile_image.blob.content_type.start_with? 'image/' 
+    elsif !profile_image.blob.content_type.start_with? 'image/'
       errors.add(:profile_image, '以外の種類のファイルは投稿できません！拡張子が.jpg,.jpeg,.png,.gif,.bmp.tiff,.svg,.ico,.webpである必要があります。')
     end
   end

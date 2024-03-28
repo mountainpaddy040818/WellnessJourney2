@@ -16,3 +16,9 @@ import "../stylesheets/application";
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener("turbolinks:load", () => {
+  $('.close').on('click', (e) => {
+    $('.flash-message').hide();
+  })
+})
