@@ -26,22 +26,18 @@
 - 食事内容の投稿
 - 筋トレに関する豆知識の共有 etc.
 
-<!--## URL-->
-<!--## https://wellnessjourney.xyz-->
+<!--## [WellnessJourney](https://wellnessjourney.xyz)-->
 ​
 ## 設計書
 
-#### 制作スケジュール表
-https://docs.google.com/spreadsheets/d/1W9hfPrPYVyB8MAeNCb9lHVdVdqceW2ibfjWdJNvKiFY/edit#gid=1773513600
+#### [制作スケジュール表](https://docs.google.com/spreadsheets/d/1W9hfPrPYVyB8MAeNCb9lHVdVdqceW2ibfjWdJNvKiFY/edit#gid=1773513600)
 
-#### ER図
-https://app.diagrams.net/#G1fmuCPf8_vUmVRQGmOqpEkEByg1_xy_xz#%7B%22pageId%22%3A%22T22SGYjDBbAf4KW2gtLK%22%7D
+#### [テスト仕様書](https://docs.google.com/spreadsheets/d/12Iw9rOFP7EsFf0y7AB7_7drcZCtqMW6Z/edit#gid=1511467858)
 
-#### テーブル定義書
-https://docs.google.com/spreadsheets/d/1ssEIqT_9k1dITqUFnzyeUxI8VfsYqUMh/edit?copiedFromTrash#gid=1578921208
+#### [ER図](https://app.diagrams.net/#G1fmuCPf8_vUmVRQGmOqpEkEByg1_xy_xz#%7B%22pageId%22%3A%22T22SGYjDBbAf4KW2gtLK%22%7D)
 
-#### テスト仕様書
-https://docs.google.com/spreadsheets/d/12Iw9rOFP7EsFf0y7AB7_7drcZCtqMW6Z/edit#gid=1511467858
+#### [テーブル定義書](https://docs.google.com/spreadsheets/d/1ssEIqT_9k1dITqUFnzyeUxI8VfsYqUMh/edit?copiedFromTrash#gid=1578921208)
+
 ​
 ## 開発環境
 - OS：Linux(CentOS)
@@ -50,7 +46,7 @@ https://docs.google.com/spreadsheets/d/12Iw9rOFP7EsFf0y7AB7_7drcZCtqMW6Z/edit#gi
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
-## 使用方法
+## インストール方法
 - git clone git@github.com:mountainpaddy040818/WellnessJourney.git
 - cd WellnessJourney
 - yarn install
