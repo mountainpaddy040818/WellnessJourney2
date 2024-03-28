@@ -36,7 +36,7 @@
 #### テーブル定義書
 <br>
 ##### users<br>
-![スクリーンショット 2024-03-28 23 51 20](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/7fa1f1c0-6ad9-4fb2-9d7f-ee355da70fd6)
+![スクリーンショット 2024-03-29 0 33 16](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/5f798c03-f864-4885-9448-84284094a48d)
 
 ##### health_records<br>
 ![スクリーンショット 2024-03-28 23 53 29](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/8c0b3c2c-8e17-4028-bc42-a03c27166dfb)
