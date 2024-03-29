@@ -30,7 +30,7 @@
 ## 設計書
 
 ### ER図<br>
-![スクリーンショット 2024-03-29 12 50 05](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/13f49d29-08b4-41f1-b116-3aabb3ccd711)
+![スクリーンショット 2024-03-29 13 21 17](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/1d6e390b-a55f-4e27-951b-e6bb49dd8ac4)
 
 ### テーブル定義書
 <br><br>
