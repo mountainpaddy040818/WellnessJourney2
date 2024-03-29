@@ -1,5 +1,4 @@
 # WellnessJourney
-#### 健康への旅路
 ​
 ## サイト概要
 ### サイトテーマ
@@ -30,53 +29,53 @@
 ​
 ## 設計書
 
-#### ER図<br>
-![スクリーンショット 2024-03-28 23 44 29](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/ab92058c-c043-41ea-bd04-c57b019d4f9f)
+### ER図<br>
+![スクリーンショット 2024-03-29 12 50 05](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/13f49d29-08b4-41f1-b116-3aabb3ccd711)
 
-#### テーブル定義書
+### テーブル定義書
 <br><br>
-##### users<br>
+#### users<br>
 ![スクリーンショット 2024-03-29 0 33 16](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/5f798c03-f864-4885-9448-84284094a48d)
 
-##### health_records<br>
+#### health_records<br>
 ![スクリーンショット 2024-03-28 23 53 29](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/8c0b3c2c-8e17-4028-bc42-a03c27166dfb)
 
-##### health_record_comments<br>
+#### health_record_comments<br>
 ![スクリーンショット 2024-03-28 23 53 38](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/c2000d91-70a9-4f6a-abf4-7dcfec2a1693)
 
-##### groups<br>
+#### groups<br>
 ![スクリーンショット 2024-03-28 23 56 26](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/4b401729-6c34-4754-83e2-0ea29df54a11)
 
-##### group_users<br>
+#### group_users<br>
 ![スクリーンショット 2024-03-28 23 54 59](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/2b509f49-1d9d-4f87-95dc-9a0ce697a3ad)
 
-##### genres<br>
+#### genres<br>
 ![スクリーンショット 2024-03-28 23 56 53](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/253c3029-72ce-422c-9783-9c8b7280fe06)
 
-##### favorites<br>
+#### favorites<br>
 ![スクリーンショット 2024-03-28 23 57 01](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/55a06ff8-b55a-4f86-8f95-8228ce479a5f)
 
-##### relationships<br>
+#### relationships<br>
 ​![スクリーンショット 2024-03-28 23 57 09](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/f0c9d884-9889-43a5-bf32-303582d47ff4)
 
-##### record_tags<br>
+#### record_tags<br>
 ![スクリーンショット 2024-03-29 0 06 24](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/91a67597-aeda-48da-8e83-593663f783b1)
 
-##### health_record_tags<br>
+#### health_record_tags<br>
 ![スクリーンショット 2024-03-28 23 56 45](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/c63686d7-c971-4b27-801e-8069afdcb52c)
 
-##### admins<br>
+#### admins<br>
 ![スクリーンショット 2024-03-28 23 57 16](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/eb69ebea-9811-4cf5-ba3e-c9a745843d3a)
 
-#### テスト仕様書
+### テスト仕様書
 <br><br>
-##### ユーザー<br>
+#### ユーザー<br>
 
 ![スクリーンショット 2024-03-29 0 21 34](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/9bc18553-7a79-4812-9a59-adaa94df4740)
 
 ![スクリーンショット 2024-03-29 0 21 55](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/f85636f6-d458-444a-bd20-0811f55ad5ff)
 
-##### 管理者<br>
+#### 管理者<br>
 ![スクリーンショット 2024-03-29 0 22 03](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/aaffad5d-fb44-4334-8b3a-45d4278b462f)
 
 
