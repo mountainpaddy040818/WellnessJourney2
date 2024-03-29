@@ -20,7 +20,7 @@
         <% elsif user_signed_in? %>
           <p></p>
         <% else %>
-          <p>まずは↓の「Guest Log in」をPUSHして使ってみてください！！</p>
+          <p><span class="text-danger">⬇︎</span>の「Guest Log in」をクリックして使ってみてください！！</p>
         <% end %>
         <h4>Let's enjoy your fitness life!</h4>
       </h5>
@@ -35,7 +35,7 @@
         <% elsif user_signed_in? %>
           <p></p>
         <% else %>
-          <%= link_to 'Guest Log in', users_guest_sign_in_path, class: "btn btn-outline-dark btn-block btn-lg mb-3 sign_in", method: :post %>
+          <%= link_to 'Guest Log in', users_guest_sign_in_path, class: "btn btn-outline-danger btn-block btn-lg mb-3 sign_in", method: :post %>
         <% end %>
       </div>
     </div>
