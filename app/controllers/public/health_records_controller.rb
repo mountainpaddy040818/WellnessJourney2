@@ -39,7 +39,6 @@ class Public::HealthRecordsController < ApplicationController
 
   def edit
     @health_record = HealthRecord.find(params[:id])
-    @genre = Genre.find(params[:id])
     @tag_list = @health_record.record_tags.pluck(:tag_name).join(",")
   end
 
