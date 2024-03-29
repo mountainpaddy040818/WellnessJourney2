@@ -124,13 +124,13 @@
     </ul>
 
     <% if admin_signed_in? %>
-      <p class="text-warning mt-3 ml-auto mr-5">
+      <h4 class="text-warning mt-3 ml-auto mr-5">
         Admin Logging in now.
-      </p>
+      </h4>
     <% elsif user_signed_in? %>
-      <p class="text-light mt-3 ml-auto mr-5">
+      <h6 class="text-light mt-3 ml-auto mr-5">
         ようこそ！<%= current_user.name %>さん!
-      </p>
+      </h6>
     <% end %>
 
     <% if user_signed_in? %>
