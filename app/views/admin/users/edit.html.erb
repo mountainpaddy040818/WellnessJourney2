@@ -30,7 +30,7 @@
           <tr>
             <td><strong>Joined Day</strong></td>
             <td>
-              <i class="far fa-clock"></i><%= l @user.created_at %>
+              <i class="far fa-clock"></i><%= @user.created_at.strftime("%a %Y.%m.%d %H:%M") %>
             </td>
           </tr>
           <tr>

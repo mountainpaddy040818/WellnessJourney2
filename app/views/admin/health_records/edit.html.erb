@@ -51,7 +51,7 @@
         <tr>
           <td><strong>Posted Time</strong></td>
           <td>
-            <i class="far fa-clock"></i><%= l @health_record.created_at %>
+            <i class="far fa-clock"></i><%= @health_record.created_at.strftime("%a %Y.%m.%d %H:%M") %>
           </td>
         </tr>
         <tr>
