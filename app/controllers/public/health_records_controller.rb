@@ -44,7 +44,7 @@ class Public::HealthRecordsController < ApplicationController
 
   def update
     @health_record = HealthRecord.find(params[:id])
-    @genre = Genre.find(params[:id])
+    @genre = Genre.find(params[:health_record][:genre_id])
     tag_list = params[:health_record][:tag_name].split(",")
     if @health_record.update(health_record_params)
       @genre.save
