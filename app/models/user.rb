@@ -91,7 +91,7 @@ class User < ApplicationRecord
 
   private
 
-  # 画像投稿時のバリデーション
+  # 画像以外のファイルを入れられると困るため
   def profile_image_type
     if profile_image.attached? == false
       errors.add(:profile_image, 'を選択してください')
