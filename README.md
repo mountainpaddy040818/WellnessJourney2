@@ -29,6 +29,9 @@
 ​
 ## 設計書
 
+### システム構成図<br>
+![スクリーンショット 2024-04-14 16 46 26](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/23cff5d5-faee-4556-a668-584d7b4e2306)
+
 ### ER図<br>
 ![スクリーンショット 2024-03-29 13 21 17](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/1d6e390b-a55f-4e27-951b-e6bb49dd8ac4)
 
