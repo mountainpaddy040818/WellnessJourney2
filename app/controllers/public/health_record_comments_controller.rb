@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Public::HealthRecordCommentsController < ApplicationController
   before_action :authenticate_user!
 

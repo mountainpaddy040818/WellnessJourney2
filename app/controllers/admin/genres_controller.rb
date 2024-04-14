@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::GenresController < ApplicationController
   before_action :set_genre, only: [:edit, :update]
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateHealthRecordComments < ActiveRecord::Migration[6.1]
   def change
     create_table :health_record_comments do |t|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ContactMailer < ApplicationMailer
   def send_mail(mail_title,mail_content,group_users)
     #メソッドに対して引数を設定
