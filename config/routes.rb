@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
-  
+
   # URLから/publicを取り除くために"scope module"を使用
   scope module: :public do
     root "homes#top"
@@ -41,7 +41,7 @@ Rails.application.routes.draw do
       get "send/mail" => "groups#send_mail"
     end
   end
-  
+
   # 管理者側は/adminをURLに組み込みわかりやすくするため"namespace"を使用
   namespace :admin do
     root "homes#top"

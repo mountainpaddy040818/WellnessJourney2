@@ -90,7 +90,6 @@ class User < ApplicationRecord
   end
 
   private
-
   # 画像以外のファイルを入れられると困るため
   # def profile_image_type
   #   if profile_image.attached? == false

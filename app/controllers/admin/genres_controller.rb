@@ -2,7 +2,7 @@ class Admin::GenresController < ApplicationController
   before_action :set_genre, only: [:edit, :update]
 
   def index
-    @genres = Genre.order(created_at: :desc)#.page(params[:page].to_i)
+    @genres = Genre.order(created_at: :desc) # .page(params[:page].to_i)
     @genre = Genre.new
   end
 

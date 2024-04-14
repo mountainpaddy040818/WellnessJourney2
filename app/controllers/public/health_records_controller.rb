@@ -75,7 +75,7 @@ class Public::HealthRecordsController < ApplicationController
       params.require(:health_record).permit(:genre_id, :name, :exercise,
         :training_content, :diet_content, :today_impression, :comment, :tag_name)
     end
-    
+
     # 投稿したユーザー以外が編集できてしまうのは危険なため
     def ensure_correct_user
       @health_record = HealthRecord.find(params[:id])
