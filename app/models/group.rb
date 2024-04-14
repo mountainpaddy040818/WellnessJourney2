@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Group < ApplicationRecord
   has_many :group_users, dependent: :destroy
   belongs_to :owner, class_name: "User"

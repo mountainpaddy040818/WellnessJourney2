@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -90,7 +92,6 @@ class User < ApplicationRecord
   end
 
   private
-
   # 画像以外のファイルを入れられると困るため
   # def profile_image_type
   #   if profile_image.attached? == false
