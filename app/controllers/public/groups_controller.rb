@@ -35,6 +35,9 @@ class Public::GroupsController < ApplicationController
   end
 
   def update
+    if group_params[:group_image].nil?
+      @group.errors.add(:group_image, "を選択してください")
+    end
     if @group.update(group_params)
       flash[:notice] = "You have successfully updated the group."
       redirect_to groups_path
