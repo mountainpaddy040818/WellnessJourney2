@@ -44,7 +44,7 @@
 ![スクリーンショット 2024-04-23 15 54 33](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/cc26b55c-6c5f-43fd-a7a3-1fd86c1de1ad)
 
 #### health_record_comments<br>
-![スクリーンショット 2024-03-28 23 53 38](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/c2000d91-70a9-4f6a-abf4-7dcfec2a1693)
+![スクリーンショット 2024-04-23 16 02 18](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/669d5c78-0475-4315-bd84-616d2775527d)
 
 #### groups<br>
 ![スクリーンショット 2024-04-23 14 24 45](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/24f4d130-6eb1-447a-b02f-ae9d9522de7c)
@@ -56,7 +56,7 @@
 ![スクリーンショット 2024-03-28 23 56 53](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/253c3029-72ce-422c-9783-9c8b7280fe06)
 
 #### favorites<br>
-![スクリーンショット 2024-03-28 23 57 01](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/55a06ff8-b55a-4f86-8f95-8228ce479a5f)
+![スクリーンショット 2024-04-23 16 03 04](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/a84df3cd-80e9-48f1-877f-016d521459bf)
 
 #### relationships<br>
 ​![スクリーンショット 2024-03-28 23 57 09](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/f0c9d884-9889-43a5-bf32-303582d47ff4)
