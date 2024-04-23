@@ -24,7 +24,8 @@
               <i class="far fa-clock"></i><%= record_tag.created_at.strftime("%a %Y.%m.%d %H:%M") %>
             </td>
             <td>
-              <%= link_to "Destroy", admin_record_tag_path(record_tag.id), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-outline-danger btn-sm" %>
+              <%= link_to "Destroy", admin_record_tag_path(record_tag.id), method: :delete, 
+              data: { confirm: 'Are you sure really?' }, class: "btn btn-outline-danger btn-sm" %>
             </td>
           </tr>
         <% end %>

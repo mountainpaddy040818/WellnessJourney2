@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 class Public::HealthRecordCommentsController < ApplicationController
   before_action :authenticate_user!
-
   before_action :ensure_correct_user, only: [:edit, :destroy, :update]
 
   def create
@@ -38,5 +35,4 @@ class Public::HealthRecordCommentsController < ApplicationController
         redirect_to health_record_path(@health_record)
       end
     end
-
 end

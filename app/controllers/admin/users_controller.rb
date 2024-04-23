@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Admin::UsersController < ApplicationController
   before_action :authenticate_admin!
 
@@ -33,5 +31,4 @@ class Admin::UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :is_active)
     end
-
 end

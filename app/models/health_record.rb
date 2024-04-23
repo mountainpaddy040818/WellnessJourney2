@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class HealthRecord < ApplicationRecord
   belongs_to :user
   has_one_attached :image
@@ -49,5 +47,4 @@ class HealthRecord < ApplicationRecord
       self.record_tags << record_tag
     end
   end
-
 end

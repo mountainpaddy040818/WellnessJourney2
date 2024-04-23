@@ -28,7 +28,8 @@
               <i class="far fa-clock"></i><%= health_record_comment.created_at.strftime("%a %Y.%m.%d %H:%M") %>
             </td>
             <td>
-              <%= link_to "Destroy", admin_health_record_comment_path(health_record_comment.id), method: :delete, data: { confirm: 'Are you sure really?' }, class: "btn btn-outline-danger btn-sm mr-3" %>
+              <%= link_to "Destroy", admin_health_record_comment_path(health_record_comment.id), method: :delete, 
+              data: { confirm: 'Are you sure really?' }, class: "btn btn-outline-danger btn-sm mr-3" %>
             </td>
           </tr>
         <% end %>

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Public::GroupUsersController < ApplicationController
   before_action :authenticate_user!
   
@@ -14,5 +12,4 @@ class Public::GroupUsersController < ApplicationController
     group_user.destroy
     redirect_to request.referer
   end
-  
 end

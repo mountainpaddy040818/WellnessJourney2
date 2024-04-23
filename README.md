@@ -24,8 +24,6 @@
 - 筋トレの日報を投稿
 - 食事内容の投稿
 - 筋トレに関する豆知識の共有 etc.
-
-<!--## [WellnessJourney](https://wellnessjourney.xyz)-->
 ​
 ## 設計書
 
@@ -89,14 +87,5 @@
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
-## インストール方法
-- git clone git@github.com:mountainpaddy040818/WellnessJourney.git
-- cd WellnessJourney
-- yarn install
-- bundle install
-- rails db:migrate
-- rails s
-- Preview
-
 ## 作成者
-### 山田　明弘
+### 山田 明弘

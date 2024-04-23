@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Public::HealthRecordsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :destroy, :update]
@@ -14,7 +12,7 @@ class Public::HealthRecordsController < ApplicationController
     @genre = Genre.find(params[:health_record][:genre_id])
     @health_record.genre_id = @genre.id
     tag_list = params[:health_record][:tag_name].split(",")
-
+    # タグを重複登録しようとするとこれに引っかかる
     lists = tag_list.uniq.map{|item| [item, tag_list.count(item)]}.to_h
     lists.each do |key, value|
       if(value > 1)

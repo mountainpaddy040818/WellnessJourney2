@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Admin::RecordTagsController < ApplicationController
   before_action :authenticate_admin!
 
@@ -14,5 +12,4 @@ class Admin::RecordTagsController < ApplicationController
     flash[:notice] = "You have successfully deleted the tag."
     redirect_to admin_record_tags_path
   end
-
 end

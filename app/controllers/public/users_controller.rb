@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
@@ -23,9 +21,6 @@ class Public::UsersController < ApplicationController
     if user_params[:profile_image].nil?
       @user.errors.add(:profile_image, "を選択してください")
     end
-    # elsif !profile_image.blob.content_type.start_with? 'image/'
-    #   errors.add(:profile_image, '以外の種類のファイルは投稿できません！拡張子が.jpg,.jpeg,.png,.gif,.bmp.tiff,.svg,.ico,.webpである必要があります。')
-    # end
     if @user.update(user_params)
       flash[:notice] = "You have successfully updated the user information."
       redirect_to user_path(@user)

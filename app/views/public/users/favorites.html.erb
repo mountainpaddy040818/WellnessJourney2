@@ -16,12 +16,12 @@
       <tbody>
         <% @favorite_records.each do |health_record| %>
           <tr>
-              <td>
-                <%= link_to health_record.genre.name, health_record_path(health_record), class: "text-dark" %>
-              </td>
-              <td>
-                <%= health_record.exercise %>
-              </td>
+            <td>
+              <%= link_to health_record.genre.name, health_record_path(health_record), class: "text-dark" %>
+            </td>
+            <td>
+              <%= health_record.exercise %>
+            </td>
           </tr>
         <% end %>
       </tbody>

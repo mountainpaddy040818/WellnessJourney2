@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Public::GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
@@ -26,7 +24,7 @@ class Public::GroupsController < ApplicationController
       redirect_to groups_path, method: :post
     else
       flash.now[:alert] = "You cannot create a group due to blank fields."
-      render "new"
+      render :new
     end
   end
 
@@ -43,17 +41,12 @@ class Public::GroupsController < ApplicationController
       redirect_to groups_path
     else
       flash.now[:alert] = "You have failed to update the group."
-      render "edit"
+      render :edit
     end
   end
 
   def new_mail
     @group = Group.find(params[:group_id])
-    # if @group.save
-    #   flash[:notice] = ""
-    # else
-    #   flash.now[:alert] = ""
-    # end
   end
 
   def send_mail
@@ -76,5 +69,5 @@ class Public::GroupsController < ApplicationController
         redirect_to groups_path
       end
     end
-  
+
 end

@@ -62,7 +62,8 @@
           <%= f.label :password_confirmation %><br />
         </div>
         <div class="col-lg-7 offset-lg-1 flex-md-fill">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password_confirmation", class: "form-control" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", 
+          placeholder: "password_confirmation", class: "form-control" %>
         </div>
       </div>
     </div>
@@ -72,7 +73,5 @@
         <%= f.submit "Sign up", class: "btn btn-outline-success btn-lg" %>
       </div>
     </div>
-
   </div>
-
 <% end %>

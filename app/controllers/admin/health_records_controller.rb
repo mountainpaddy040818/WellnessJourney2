@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 
 class Admin::HealthRecordsController < ApplicationController
   before_action :authenticate_admin!
@@ -22,5 +21,4 @@ class Admin::HealthRecordsController < ApplicationController
     def health_record_params
       params.require(:health_record).permit(:name, :genre_id, :exercise, :training_content, :diet_content, :today_impression)
     end
-
 end

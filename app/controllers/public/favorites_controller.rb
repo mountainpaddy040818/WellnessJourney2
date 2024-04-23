@@ -1,7 +1,4 @@
-# frozen_string_literal: true
-
 class Public::FavoritesController < ApplicationController
-
   def create
     @health_record = HealthRecord.find(params[:health_record_id])
     # すでにいいねされていれば処理を抜ける
@@ -17,5 +14,4 @@ class Public::FavoritesController < ApplicationController
     favorite = current_user.favorites.find_by(health_record_id: @health_record.id)
     favorite.destroy
   end
-
 end
