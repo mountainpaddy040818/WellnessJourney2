@@ -11,10 +11,10 @@ class HealthRecord < ApplicationRecord
 
   belongs_to :genre
 
-  validates :exercise, presence:true, length: { maximum: 50 }
-  validates :training_content, presence:true, length: { maximum: 50 }
-  validates :diet_content, presence:true, length: { maximum: 50 }
-  validates :today_impression, presence:true, length: { maximum: 100 }
+  validates :exercise, presence: true, length: { maximum: 50 }
+  validates :training_content, presence: true, length: { maximum: 50 }
+  validates :diet_content, presence: true, length: { maximum: 50 }
+  validates :today_impression, presence: true, length: { maximum: 100 }
   validates :tag_name, presence: true, length: { maximum: 20 }
 
   def favorited_by?(user)

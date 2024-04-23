@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 2024_03_23_054115) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "tag_name"
     t.integer "genre_id", null: false
-    t.string "name", null: false
+    t.string "name"
   end
 
   create_table "record_tags", force: :cascade do |t|

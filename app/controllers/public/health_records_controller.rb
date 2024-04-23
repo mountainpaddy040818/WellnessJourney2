@@ -15,6 +15,15 @@ class Public::HealthRecordsController < ApplicationController
     @health_record.genre_id = @genre.id
     tag_list = params[:health_record][:tag_name].split(",")
 
+    lists = tag_list.uniq.map{|item| [item, tag_list.count(item)]}.to_h
+    lists.each do |key, value|
+      if(value > 1)
+        flash.now[:alert] = "You cannot register the same tag name duplicately."
+        render :new
+        return
+      end
+    end
+
     if @health_record.save
       @genre.save
       @health_record.save_record_tags(tag_list)
@@ -78,7 +87,7 @@ class Public::HealthRecordsController < ApplicationController
         :training_content, :diet_content, :today_impression, :comment, :tag_name)
     end
 
-    # 投稿したユーザー以外が編集できてしまうのは危険なため
+    # 投稿したユーザー以外が編集できてしまうのはセキュリティ上良くないため
     def ensure_correct_user
       @health_record = HealthRecord.find(params[:id])
       unless @health_record.user_id == current_user.id
