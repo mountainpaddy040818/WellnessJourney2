@@ -47,7 +47,7 @@
 ![スクリーンショット 2024-03-28 23 53 38](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/c2000d91-70a9-4f6a-abf4-7dcfec2a1693)
 
 #### groups<br>
-![スクリーンショット 2024-03-28 23 56 26](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/4b401729-6c34-4754-83e2-0ea29df54a11)
+![スクリーンショット 2024-04-23 14 24 45](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/24f4d130-6eb1-447a-b02f-ae9d9522de7c)
 
 #### group_users<br>
 ![スクリーンショット 2024-03-28 23 54 59](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/2b509f49-1d9d-4f87-95dc-9a0ce697a3ad)
@@ -68,7 +68,7 @@
 ![スクリーンショット 2024-03-28 23 56 45](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/c63686d7-c971-4b27-801e-8069afdcb52c)
 
 #### admins<br>
-![スクリーンショット 2024-03-28 23 57 16](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/eb69ebea-9811-4cf5-ba3e-c9a745843d3a)
+![スクリーンショット 2024-04-23 15 22 46](https://github.com/mountainpaddy040818/WellnessJourney2/assets/153415348/d7ef70a7-b101-486a-9bb9-dc226459db6e)
 
 ### テスト仕様書
 <br><br>
