@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2024_03_23_054115) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
+    t.string "name", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 2024_03_23_054115) do
   end
 
   create_table "group_users", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "group_id"
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["group_id"], name: "index_group_users_on_group_id"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2024_03_23_054115) do
     t.integer "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.integer "user_id", null: false
   end
 
   create_table "health_record_comments", force: :cascade do |t|
