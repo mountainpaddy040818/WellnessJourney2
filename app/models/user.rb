@@ -26,7 +26,7 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users, dependent: :destroy
   has_many :owned_groups, class_name: "Group"
 
-  validates :name, length: {maximum: 50}
+  validates :name, presence:true, length: {maximum: 50}
   validates :introduction, length: {maximum: 50}
   validates :target, length: {maximum: 50}
 

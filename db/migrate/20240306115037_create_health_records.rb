@@ -3,7 +3,7 @@
 class CreateHealthRecords < ActiveRecord::Migration[6.1]
   def change
     create_table :health_records do |t|
-      t.integer :user_id
+      t.integer :user_id, null: false
       # FK
       t.string :part, null: false
       # 体の部位

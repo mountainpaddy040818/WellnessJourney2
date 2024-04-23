@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -56,8 +54,8 @@ ActiveRecord::Schema.define(version: 2024_03_23_054115) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "health_record_id"
+    t.integer "user_id", null: false
+    t.integer "health_record_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -78,18 +76,18 @@ ActiveRecord::Schema.define(version: 2024_03_23_054115) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "introduction"
     t.string "image_id"
-    t.integer "owner_id"
+    t.integer "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
   end
 
   create_table "health_record_comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "health_record_id"
+    t.integer "user_id", null: false
+    t.integer "health_record_id", null: false
     t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -106,7 +104,7 @@ ActiveRecord::Schema.define(version: 2024_03_23_054115) do
   end
 
   create_table "health_records", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.string "exercise", null: false
     t.text "training_content", null: false
     t.text "diet_content", null: false
@@ -114,8 +112,8 @@ ActiveRecord::Schema.define(version: 2024_03_23_054115) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "tag_name"
-    t.integer "genre_id"
-    t.string "name"
+    t.integer "genre_id", null: false
+    t.string "name", null: false
   end
 
   create_table "record_tags", force: :cascade do |t|
@@ -126,8 +124,8 @@ ActiveRecord::Schema.define(version: 2024_03_23_054115) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "followed_id"
-    t.integer "follower_id"
+    t.integer "followed_id", null: false
+    t.integer "follower_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
