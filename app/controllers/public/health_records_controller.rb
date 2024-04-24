@@ -34,10 +34,8 @@ class Public::HealthRecordsController < ApplicationController
   end
 
   def index
-    to = Time.current.at_end_of_day
-    from = (to - 6.day).at_beginning_of_day
     # "sort_by"はrailsではなくruby専用の配列であるため、"Kaminari.paginate_array"で囲ってrailsの配列へ変換する必要がある
-    @health_records = Kaminari.paginate_array(HealthRecord.includes(:favorites).sort_by { |health_record| - health_record.favorites.where(created_at: from...to).count }).page(params[:page])
+    @health_records = Kaminari.paginate_array(HealthRecord.includes(:favorites).sort_by { |health_record| - health_record.favorites.count }).page(params[:page])
     @genres = Genre.all
     @tag_list = RecordTag.all
   end
