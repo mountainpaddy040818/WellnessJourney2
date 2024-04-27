@@ -1,6 +1,8 @@
 class Group < ApplicationRecord
   has_many :group_users, dependent: :destroy
+  # "owner"をユーザーモデルに関連づけるため
   belongs_to :owner, class_name: "User"
+  # 
   has_many :users, through: :group_users, source: :user, dependent: :destroy
 
   def includesUser?(user)
