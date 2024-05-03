@@ -19,7 +19,8 @@ class HealthRecord < ApplicationRecord
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
-
+  
+  # 部分検索や前方一致など分けて検索させたいため記述
   def self.looks(search, word)
     if search == "perfect_match"
       @health_records = HealthRecord.joins(:genre).where("genres.name LIKE ?", "%#{word}%")
@@ -33,7 +34,8 @@ class HealthRecord < ApplicationRecord
       @health_records = HealthRecord.all
     end
   end
-
+  
+  # 既存のタグと新しいタグを選別するために記述
   def save_record_tags(tags)
     current_tags = self.record_tags.pluck(:tag_name) unless self.record_tags.nil?
     old_tags = current_tags - tags
